@@ -1,0 +1,1625 @@
+﻿bug_id,component_name,product_name,short_description,long_description,assignee_name,reporter_name,resolution_category,resolution_code,status_category,status_code,quantity_of_votes,quantity_of_comments,bug_fix_time,severity_category,severity_code
+BUGZILLA-294734,Bugzilla-General,BUGZILLA,Emergency 2.16.10 Release,"2.16.9 is broken -- many users can't enter bugs on it particularly not from a
+fresh install. So we need to pull 2.16.9 and post a 2.16.10 instead.",mkanat,mkanat,fixed,1,resolved,4,0,15,1,blocker,6
+SUPPORT.MOZILLA.ORG-398246,General,SUPPORT.MOZILLA.ORG,Add support for custom cookies and cache headers,"Adding support for custom headers and cookie names involves two steps:
+* making session names configurable
+* disabling auto-start for sessions
+
+This can be accomplished in tiki-setup_base.php though it means in turn that all pages dependent on the hard-coded PHPSESSID cookie along with the basic session handler all need to be refactored to not assume there is a pre-existing session.
+
+I'm looking at re-implementing some session libs I have from before.  Should do the trick.
+
+This is a chicken/egg problem since we want to use non-default cookie names for NS rules.  We can't have the app auto-setting the cookie while simultaneously passing cache headers.  We need to separate the behavior so it's consistent and predictable for the proxy cache.
+
+ETA is Thurs.  This affect performance and for a couple of reasons it blocks bug 398239.",morgamic,morgamic,fixed,1,resolved,4,0,23,174,blocker,6
+MOZILLA.ORG_GRAVEYARD-516424,Server Operations,MOZILLA.ORG_GRAVEYARD,MDC badly broken this morning,MDC appears to have lost all its preferences. What's going on?,smani,eshepherd,fixed,1,resolved,4,0,6,0,blocker,6
+SKYWRITER_GRAVEYARD-511289,Collaboration,SKYWRITER_GRAVEYARD,When MobWrite is restarted data is lost,"Dion and I were collaborating on a document when it appears Kevin's daemon auto-restarted the deadlocked mobwrite.
+
+i immediately lost the contents of the files I was collaborating on with dion. i had saved frequently so i could retrieve the contents by turning collaboration off and then reloading the file and then copying this to the clipboard turning collaboration on (which caused the contents to disappear) and then pasting it in.
+
+this should be fixed such that restarting mobwrite causes no loss of data for the user.",jwalker,ben,fixed,1,resolved,4,0,3,8,blocker,6
+INFRASTRUCTURE_&_OPERATIONS_GRAVEYARD-799473,WebOps: Other,INFRASTRUCTURE_&_OPERATIONS_GRAVEYARD,please update AUS to AUS2_PRODUCTION tag,You should end up with rev 1.228 of config-dist.php.,pradcliffe+bugzilla,kmoir,fixed,1,resolved,4,0,4,0,blocker,6
+BUGZILLA-110276,Bugzilla-General,BUGZILLA,SQL error in globals.pl,"If you click on Show dependency graph for any bug check Show the summary of
+all bugs on the new page and click Submit again you get:
+
+Software error:
+select bug_status short_desc from bugs LEFT JOIN cc selectVisible_cc ON
+bugs.bug_id = selectVisible_cc.bug_id AND selectVisible_cc.who = 29933 WHERE
+((bugs.groupset & 0) = bugs.groupset OR (bugs.reporter_accessible = 1 AND
+bugs.reporter = 29933) OR (bugs.assignee_accessible = 1 AND bugs.assigned_to =
+29933) OR (bugs.qacontact_accessible = 1 AND bugs.qa_contact = 29933) OR
+(bugs.cclist_accessible = 1 AND selectVisible_cc.who = 29933 AND not
+isnull(selectVisible_cc.who))) AND bug_id = 102293: Column: 'bug_id' in where
+clause is ambiguous at globals.pl line 222.",justdave,bugzilla3,fixed,1,resolved,4,0,8,6,blocker,6
+FIREFOX-283966,General,FIREFOX,No new Mac nightlies Just an empty DMG file since 20050226,"User-Agent:       Mozilla/5.0 (Macintosh U PPC Mac OS X Mach-O en-US rv:1.8b2) Gecko/20050226 Firefox/1.0+ (PowerBook)
+Build Identifier: Mozilla/5.0 (Macintosh U PPC Mac OS X Mach-O en-US rv:1.8b2) Gecko/20050226 Firefox/1.0+ (PowerBook)
+
+The last created Mac nightly is firefox-1.0+.en-US.mac.dmg from 25-Feb-2005.
+Since 26-Feb-2005 there's a big (26MB) but empty file called
+rw.firefox-1.0+.en-US.mac.dmg in the latest-trunk folder.
+
+Workaround: Use nightlies provided by Powerbook at http://homepage.mac.com/krmathis/
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. Visit http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-trunk/
+2.
+3.
+
+Actual Results:  
+No current firefox-1.0+.en-US.mac.dmg
+
+Expected Results:  
+A current firefox-1.0+.en-US.mac.dmg that's not 26MB",chase,kamikazow,fixed,1,resolved,4,2,11,94,blocker,6
+BUGZILLA-108581,Installation & Upgrading,BUGZILLA,Bundle::Bugzilla needs to be updated on CPAN for the Bugzilla v2.16 release,"CPAN::Bugzilla will need to be updated with the new modules
+and new versions of modules listed in checksetup.pl before or
+coinciding with the Bugzilla v2.16 release.",zach,ddkilzer,fixed,1,resolved,4,0,9,91,blocker,6
+THUNDERBIRD-236156,Mail Window Front End,THUNDERBIRD,Missing DTD errors unable to start thunderbird,"Caused by the checkin for Bug #235317
+
+Thunderbird is currently DOA until we can get this fixed",mscott,mscott,fixed,1,resolved,4,0,7,0,blocker,6
+MOZILLA.ORG_GRAVEYARD-456160,Server Operations,MOZILLA.ORG_GRAVEYARD,tinderbox.mozilla.org is mostly down,"tinderbox.mozilla.org is mostly down right now:
+
+http://tinderbox.mozilla.org/showbuilds.cgi?tree=Firefox&hours=3 gives a 500 internal server error or just hangs while trying to load
+
+http://tinderbox.mozilla.org/Firefox/ shows a static page that hasn't been updated for over 20 minutes (which seems likely to be around when the problems started)
+
+This blocks people from pushing to hg.",reed,dbaron,fixed,1,resolved,4,0,2,0,blocker,6
+RELEASE_ENGINEERING-396805,General,RELEASE_ENGINEERING,fxdbug-linux-tbox needs to be upgraded to the new ref platform,"Looks like this version requirement change broke fxdbug-linux-tbox which is still the older CentOS 4.4 ref platform.
+
+This bug tracks upgrading it to the new CentOS 5 ref platform.",mozpreed,mozpreed,fixed,1,resolved,4,0,6,2,blocker,6
+BUGZILLA-124174,Email Notifications,BUGZILLA,processmail should be a package,"It would be good if globals.pl defined a sub CallProcessMail which contained 
+the system() call so that all the separate files could just call that single 
+sub. In a Win32 installation it's many times necessary to whip up several 
+parameters to the system call and it's rather cumbersome to run around the 
+source files pasting the new code everywhere. Combining the calls into a single 
+place would help changing the system call syntax.
+
+I currently use the following: 
+
+sub CallProcessMail {
+ system(d:\\perl\\bin\\perl.exe -I\\\\t1\\\\s1\\bugzilla\\ \\\\t1\\\\s1
+\\bugzilla\\processmail.pl @_)
+}",mozpreed,jouni,fixed,1,resolved,4,1,116,367,blocker,6
+MOZILLA.ORG_GRAVEYARD-416079,Server Operations,MOZILLA.ORG_GRAVEYARD,At least one of the static webheads serving up 500 ISEs to people,"It seems one of the static webheads serving www.mozilla.org is serving 500 ISEs to people.
+
+These bugs have all been filed in the last 24 hours:
+Bug 415888
+Bug 415927
+Bug 416017
+Bug 416043
+Bug 416046
+Bug 416056
+Bug 416078
+
+Might be at the AMS cluster since I can't reproduce this and since one of the reporters has a .uk e-mail address.",oremj,reed,fixed,1,resolved,4,0,18,7,blocker,6
+CORE-67723,Document Navigation,CORE,crash whenever popping up second browser window in viewer (nsDocShellTreeOwner::IsModal),"running on WinNT 4.0 today's debug build pulled around noon pst.
+viewer crashes every time a site tries to pop up an ad window.  This prevents us
+from running layout regression tests (and probably various daily performance
+metrics that only run in viewer.) We can't check in until we can at least run
+through the top100.
+
+nsDocShellTreeOwner::IsModal(nsDocShellTreeOwner * const 0x011ec620 int *
+0x0012e45c) line 236 + 16 bytes
+GlobalWindowImpl::OpenInternal(GlobalWindowImpl * const 0x02afd050 JSContext *
+0x02b01180 long * 0x00e7d600 unsigned int 3 int 0 nsIDOMWindowInternal * *
+0x0012e8b8) line 3064
+GlobalWindowImpl::Open(GlobalWindowImpl * const 0x02afd054 JSContext *
+0x02b01180 long * 0x00e7d600 unsigned int 3 nsIDOMWindowInternal * *
+0x0012e8b8) line 2069
+WindowInternalOpen(JSContext * 0x02b01180 JSObject * 0x00daac28 unsigned int
+3 long * 0x00e7d600 long * 0x0012e99c) line 4383 + 42 bytes
+js_Invoke(JSContext * 0x02b01180 unsigned int 3 unsigned int 0) line 777 + 23
+bytes
+js_Interpret(JSContext * 0x02b01180 long * 0x0012f838) line 2670 + 15 bytes
+js_Execute(JSContext * 0x02b01180 JSObject * 0x00daac28 JSScript * 0x032d0c80
+JSStackFrame * 0x00000000 unsigned int 0 long * 0x0012f838) line 956 + 13 bytes
+JS_EvaluateUCScriptForPrincipals(JSContext * 0x02b01180 JSObject * 0x00daac28
+JSPrincipals * 0x0327f050 const unsigned short * 0x00f16290 unsigned int
+17696 const char * 0x0327f170 unsigned int 1 long * 0x0012f838) line 3224 +
+25 bytes
+nsJSContext::EvaluateString(nsJSContext * const 0x02b006b0 const
+basic_nsAReadableString & {...} void * 0x00daac28 nsIPrincipal
+* 0x0327f04c const char * 0x0327f170 unsigned int 1 const char * 0x005125f8
+basic_nsAWritableString & {...} int * 0x0012f894) line 609 + 68
+bytes
+HTMLContentSink::EvaluateScript(nsString & {...} nsIURI * 0x032b6510 int 1
+const char * 0x005125f8) line 4689
+HTMLContentSink::OnStreamComplete(HTMLContentSink * const 0x032ce984
+nsIStreamLoader * 0x032b6050 nsISupports * 0x00000000 unsigned int 0 unsigned
+int 17696 const char * 0x00f0e248) line 4811 + 42 bytes
+nsStreamLoader::OnStopRequest(nsStreamLoader * const 0x032b6054 nsIChannel *
+0x032b5d40 nsISupports * 0x00000000 unsigned int 0 const unsigned short *
+0x002df048 gCommonEmptyBuffer) line 121 + 78 bytes
+nsHTTPFinalListener::OnStopRequest(nsHTTPFinalListener * const 0x032b1750
+nsIChannel * 0x032b5d40 nsISupports * 0x00000000 unsigned int 0 const
+unsigned short * 0x002df048 gCommonEmptyBuffer) line 1182 + 42 bytes
+InterceptStreamListener::OnStopRequest(InterceptStreamListener * const
+0x032a8680 nsIChannel * 0x032b5d40 nsISupports * 0x00000000 unsigned int 0
+const unsigned short * 0x002df048 gCommonEmptyBuffer) line 1212
+nsHTTPChannel::ResponseCompleted(nsIStreamListener * 0x032a8680 unsigned int 0
+const unsigned short * 0x002df048 gCommonEmptyBuffer) line 1930 + 42 bytes
+nsHTTPServerListener::OnStopRequest(nsHTTPServerListener * const 0x032aa7f0
+nsIChannel * 0x032b1084 nsISupports * 0x032b5d40 unsigned int 0 const
+unsigned short * 0x002df048 gCommonEmptyBuffer) line 735
+nsOnStopRequestEvent::HandleEvent(nsOnStopRequestEvent * const 0x032786b0) line
+177 + 67 bytes
+nsStreamObserverEvent::HandlePLEvent(PLEvent * 0x032786b4) line 78
+PL_HandleEvent(PLEvent * 0x032786b4) line 576 + 10 bytes
+PL_ProcessPendingEvents(PLEventQueue * 0x011ea930) line 509 + 9 bytes
+_md_EventReceiverProc(HWND__ * 0x04ac05a2 unsigned int 49394 unsigned int 0
+long 18786608) line 1054 + 9 bytes
+USER32! 77e71820()",adamlock,buster,fixed,1,resolved,4,0,8,9,blocker,6
+CORE-136756,String,CORE,Strings requires unfrozen nsCRT class,"Strings requiring unfrozen the nsCRT class is a problem for components plugins
+and embedders that want to work in or with multiple version of mozilla and not
+have to reimplement the string code.  The idea is to have these clients link in
+the string code so that they can have a snapshot of our string implementation.
+ This allows the freedom to change the string classes in mozilla without worring
+about backwards compatibly (assuming that no interfaces changes - string
+interfaces are (or will be) frozen right!).  Basically the clients get a copy
+of the concrete implementation of the string interfaces.
+
+Having string require this unfrozen class will cause problems when nsCRT
+changes.  Any change could break compatiblity with built clients.",doug.turner,doug.turner,fixed,1,resolved,4,0,37,46,blocker,6
+BUGZILLA-140633,Bugzilla-General,BUGZILLA,directory datatemplate created in the bugzilla root directory,Under windows 2000 a directory named datatemplate is created by bugzilla.,justdave,cedric.caron,fixed,1,resolved,4,0,8,1,blocker,6
+FIREFOX-317633,Bookmarks & History,FIREFOX,Undo/Redo for Places,Bring across transaction management from the old Bookmarks system.,bugs,bugs,fixed,1,resolved,4,0,22,69,blocker,6
+BUGZILLA-652474,Bugzilla-General,BUGZILLA,Release Bugzilla 4.1.2 4.0.1 3.6.5 and 3.4.11,We have some valuable bug fixes in at least 3.6.5 and 4.0.1. Also 3.4.11 is affected by installation problems with Math::Random::Secure. And there are several new checkins on trunk since we released 4.1.1. So we should release soon.,mkanat,LpSolit,fixed,1,resolved,4,0,11,3,blocker,6
+FIREFOX_BUILD_SYSTEM-184182,General,FIREFOX_BUILD_SYSTEM,configure test needed for File::Spec v 0.8,"I just spent a while (an hour or so at least) building the current phoenix
+source.  Then as chrome was being archived:
+
+updating: skin/classic/global/toolbarbutton.css (deflated 79%)
+updating: skin/classic/global/button.css (deflated 71%)
+gmake[4]: Leaving directory `/home/bzbarsky/phoenix_src/mozilla/toolkit/skin/unix'
+Unknown option: -
++++ making chrome /home/bzbarsky/phoenix_src/mozilla/toolkit  =>
+../dist/bin/chrome/toolkit.jar
+File::Spec version 0.8 required--this is only version 0.6 at
+../config/preprocessor.pl line 74.
+BEGIN failed--compilation aborted at ../config/preprocessor.pl line 74.
+Preprocessing of content/viewZoomOverlay.js failed: 255 at
+../config/make-jars.pl line 340  chunk 2.
+gmake[3]: *** [libs] Error 2
+
+It would really help to do this check _before_ the compile starts.",bryner,bzbarsky,fixed,1,resolved,4,0,21,397,blocker,6
+BUGZILLA-261993,Query/Bug List,BUGZILLA,rampant uninitialized value error in log with fix for bug 255512,"Ever since the fix for bug 255512 was checked in and landfill's tip install
+upgraded to it landfill's httpd error log has been bombarded with the following
+error:
+
+[Thu Sep 23 13:30:16 2004] [error] [client 67.109.126.2] [Thu Sep 23 13:30:16
+2004] buglist.cgi: Use of uninitialized value in numeric eq (==) at
+/var/www/html/bugzilla-tip/buglist.cgi line 842. referer:
+http://landfill.bugzilla.org/bugzilla-tip/query.cgi
+
+It's bad enough to have taken about 90MB of space on disk before I discovered it
+today.  Since Sunday morning (two and a half days ago) 173K of 174K lines in
+the log are that error.",wurblzap,myk,fixed,1,resolved,4,0,6,1,blocker,6
+CALENDAR-279165,Internal Components,CALENDAR,Cannot build Sunbird on BeOS,"General problem for both BeOS version (netserver and BONE)
+is
+#ifdef HAVE_STDINT_H
+#include 
+#endif
+in mozilla/calendar/libical/src/libical/icalrecur.c  line 138.
+BeOS has inttypes.h
+
+Don't know what place is better to change configure files with check to 
+AC_CHECK_HEADERS(stdint.h inttypes.h)
+
+or just icalrecur.c file with #if defined(BeOS)
+-----------
+Second poblem is in libxpical and specific for BONE versions of BeOS.
+mozilla/calendar/libxpical/token.c
+contains
+#ifdef XP_BEOS
+#include 
+#endif
+which is OK only for netserver version.
+in case of BONE version all required definitions are in standard header files
+so this ifdef must be ommited.",sergei_d,sergei_d,fixed,1,resolved,4,0,26,558,critical,5
+CORE-508247,SVG,CORE,Crash [@ _moz_cairo_matrix_multiply] with getCTM method on path inside definition-src,"Created attachment 392477
+testcase
+
+See testcase which crashes current trunk build.
+
+This regressed between 2009-07-22 and 2009-07-24:
+http://hg.mozilla.org/mozilla-central/pushloghtml?startdate=2009-07-22+04%3A00%3A00&enddate=2009-07-24+06%3A00%3A00
+I guess a regression from bug 435356.
+
+http://crash-stats.mozilla.com/report/index/c7aff124-3e64-42fd-902b-318792090804?p=1
+0   xul.dll   _moz_cairo_matrix_multiply    gfx/cairo/cairo/src/cairo-matrix.c:298
+1  xul.dll  gfxMatrix::Multiply  gfx/thebes/src/gfxMatrix.cpp:82
+2  xul.dll  xul.dll@0x9aeb17  
+3  xul.dll  nsSVGGraphicElement::GetCTM  content/svg/content/src/nsSVGGraphicElement.cpp:109
+4  xul.dll  NS_InvokeByIndex_P  xpcom/reflect/xptcall/src/md/win32/xptcinvoke.cpp:101
+5  xul.dll  XPCWrappedNative::CallMethod  js/src/xpconnect/src/xpcwrappednative.cpp:2710",longsonr,martijn.martijn,fixed,1,resolved,4,0,17,27,critical,5
+FIREFOX-304804,Disability Access,FIREFOX,Menu is not accessible,"Using GOK->Menu no keyboard for menus can be displayed. The whole menu bar is
+not accessible. This is critical bugs for firefox a11y on Unix platform.",Louie.Zhao,Louie.Zhao,fixed,1,resolved,4,0,2,5,critical,5
+INFRASTRUCTURE_&_OPERATIONS-619146,NetOps,INFRASTRUCTURE_&_OPERATIONS,please open mysql port for bm-graphs-stage01 -> tm-stage01-master01,"Jabba set us up a new staging server (bm-graphs-stage01) over in bug 619083.
+
+We need to be able to connect to mysql (3306) on tm-stage01-master01",justdave,rhelmer,fixed,1,resolved,4,0,5,30,critical,5
+MOZILLA.ORG_GRAVEYARD-75991,Server Operations,MOZILLA.ORG_GRAVEYARD,miscstats needs to work with bonsai and bugzilla on separate servers,"The script called mozilla/webtools/miscstats/genstats.cgi assumes that bonsai
+and bugzilla are on the same server.  Now that bugzilla is moving to a new
+server this script has to be updated to take that into account.
+
+The quick and dirty solution is to run this script on both servers with each
+script generating only the statistics for its own server.
+
+The one correct solution(TM) is to give each server access to the other's mysql
+installation but this requires thinking through the security issues involved.
+
+Since Bugzilla is moving to the new server today I'm going to implement the
+quick and dirty solution for the moment.",myk,myk,fixed,1,resolved,4,0,17,9,critical,5
+TECH_EVANGELISM_GRAVEYARD-110818,English US,TECH_EVANGELISM_GRAVEYARD,irt.org - DHTML/JS content is outdated.,"This is a very popular site (linked to by About.com) where many people learn
+DHTML and Javascript.
+
+Unfortunately much of the code listed is for layers etc. and doesn't work well
+with gecko based browsers.  The content needs to be updated to work with DOM.
+
+The longer this site continues to have it's bad content the more sites out
+there will use the bad content.",english-us,caillon,fixed,1,resolved,4,0,6,2646,critical,5
+FIREFOX-399065,General,FIREFOX,Firefox crashes when pop-up window is closed via self.close() or window close button (red X),"User-Agent:       Mozilla/5.0 (Macintosh U PPC Mac OS X Mach-O en-US rv:1.8.1.7) Gecko/20070914 Firefox/2.0.0.7
+Build Identifier: Mozilla/5.0 (Macintosh U PPC Mac OS X Mach-O en-US rv:1.8.1.7) Gecko/20070914 Firefox/2.0.0.7
+
+A child window is opened using Javascript window.open(). When this window is closed using either the OS'es red X button or call to Javascript self.close().  This is not universally true -- some factor in the test code (in the example URL) is doubtless responsible.  (I will be spending some time isolating this factor -- it's killing my app and I want it to stop!)
+
+BTW: I've tested this with Windows and it does not cause crash.
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. Go to http://www.pemburn.com/poptest/index.html
+2. Click the Edit button
+3. When window pops up close it with Cancel button
+Actual Results:  
+Firefox crashes
+
+Expected Results:  
+Window should close",nobody,mark,fixed,1,resolved,4,0,11,0,critical,5
+CALENDAR-461337,Build Config,CALENDAR,Sunbird tinderboxen need more disk space to stay green,Sunbird (but not Lightning) tinderboxen are aflame on Linux & Windows see http://tinderbox.mozilla.org/showbuilds.cgi?tree=Sunbird&hours=24,gozer,antoine.mechelynck,fixed,1,resolved,4,0,17,11,critical,5
+CORE-384037,XUL,CORE,Crash [@ nsIFrame::IsBoxFrame] with ,"Created attachment 267985
+testcase (crashes Firefox when loaded)",roc,jruderman,fixed,1,resolved,4,0,13,684,critical,5
+MOZILLA_LABS_GRAVEYARD-580422,Test Pilot,MOZILLA_LABS_GRAVEYARD,Test Pilot Raw Data log randomly resets,"I haven't been able to reproduce this on command and it seems to happen randomly.  Here's what happens:
+
+I click 'more info' on the Firefox 4 Beta interface study I have running then click 'click here' to bring up my raw data log.  Everything is logging fine and I'll do some more UI interactions (click back etc) to test the study.  Everything seems to be logging fine but after a few minutes I'll click 'Click here' again to refresh the log and the log will be totally blank - no study meta data no events no anything.  I'll do some more UI interactions click 'Click here' again and the new UI interactions I have done are logged correctly but none of the old data is there so my log is only a few lines - its just like the log reset..
+
+Tested against Mozilla/5.0 (Windows U Windows NT 6.1 WOW64 en-US rv:2.0b1) Gecko/20100630 Firefox/4.0b1",jono,cjung,fixed,1,resolved,4,0,13,6,critical,5
+INFRASTRUCTURE_&_OPERATIONS_GRAVEYARD-450659,WebOps: Other,INFRASTRUCTURE_&_OPERATIONS_GRAVEYARD,Need QMO update for SA-2008-047 - Drupal core - Multiple vulnerabilities,Drupal security advisory SA-2008-047 (Drupal core - Multiple vulnerabilities) was released yesterday. Need to get QMO patched ASAP.,reed,reed,fixed,1,resolved,4,0,7,0,critical,5
+CORE-300936,ImageLib,CORE,ABR in XBM image leading to arbitrary code execution,"User-Agent:       Mozilla/5.0 (X11 U Linux i686 en-US rv:1.7.8) Gecko/20050712 Firefox/1.0.4
+Build Identifier: Mozilla/5.0 (X11 U Linux i686 en-US rv:1.7.8) Gecko/20050712 Firefox/1.0.4
+
+mozilla/modules/libpr0n/decoders/xbm/nsXBMDecoder.cpp:
+
+***
+
+nsresult nsXBMDecoder::ProcessData(const char* aData PRUint32 aCount)
+{
+[...]
+        // Check for X11 flavor
+        if (strstr(mPos  char ))
+            mIsX10 = PR_FALSE
+        // Check for X10 flavor
+        else if (strstr(mPos  short ))
+            mIsX10 = PR_TRUE
+        else
+            // Neither identifier found.  Return for now waiting for more data.
+            return NS_OK 
+[...]
+    if (mState == RECV_DATA)
+    {
+        PRUint32 bpr
+        mFrame->GetImageBytesPerRow(
+        PRUint32 abpr
+        mFrame->GetAlphaBytesPerRow(
+        PRBool hiByte = PR_TRUE
+
+        do
+        {
+            PRUint32 pixel = strtoul(mPos 
+[...]
+[1]         while (*endPtr && isspace(*endPtr))
+                endPtr++       // skip whitespace looking for comma
+            if (*endPtr && (*endPtr != ''))
+            {
+[5]             *endPtr = '\0'
+                mState = RECV_DONE  // strange character (or ending '}')
+            }
+                (...)
+            if (!mIsX10 || !hiByte)
+[2]             mPos = endPtr // go to next value only when done with this one
+        [...]
+[3]         mPos++
+[4]     } while (*mPos 
+
+***
+
+The ProcessData function of the nsXBMDecoder class parse the data of an XBM's
+format image.
+The bug happens during the re-processing of this image format within the
+libpr0n a module activated by default :
+
+At [1] endPtr is incremented until the null terminating character if it's
+fill by ' ' space.
+At [2] mPos is set to endPtr if mIsX10 and hiByte are null. There are option
+taken from the XBM format's image.
+At [3] mPos is incremented without checking if *mPos is null.
+Thus the boucle at [4] can not stop depending on the state of the heap.
+
+I found it is possible to craft such an XBM image to put the heap layout in
+a predictable state and exploit the bug reliably.
+
+An attacker could execute arbitrary code on mozilla firefox if a web page is
+viewed or even within an e-mail with a IFRAME tag.
+
+
+Reproducible: Always
+
+Steps to Reproduce:
+#0  nsXBMDecoder::ProcessData (this=0x870b2e0 
+    aData=0x81c3e44 #define gopher_binary_width 20\n#define
+gopher_binary_height 23\nstatic char gopher_binary_bits[] = {\n   0x00 0x00
+0x00 0x00
+ 0x00 0x00 0x00 0
+x00 0x00 0x00 0x00 0x00\n   0xff 0x3f 0x00 0x01... aCount=254) at
+nsXBMDecoder.cpp:142
+#1  0x41fc11d9 in nsXBMDecoder::ReadSegCb (aIn=0x8680e2c aClosure=0x870b2e0 
+    aFromRawSegment=0x81c3e44 #define gopher_binary_width 20\n#define
+gopher_binary_height 23\nstatic char gopher_binary_bits[] = {\n   0x00 0x00 
+0x00 0x00 0x00 0x0
+0 0x00 0x00 0x00 0x00 0x00 0x00\n   0xff 0x3f 0x00 0x01...
+aToOffset=0 aCount=254 aWriteCount=0xbfffe844) at nsXBMDecoder.cpp:129
+#2  0x401942a2 in nsPipeInputStream::ReadSegments (this=0x8680e2c 
+    writer=0x41fc11a0 <nsXBMDecoder::ReadSegCb(nsIInputStream* void* char
+const* unsigned int unsigned int unsigned int*)> closure=0x870b2e0 c
+ount=254 
+    readCount=0xbfffe8c8) at nsPipe3.cpp:761
+#3  0x41fc1223 in nsXBMDecoder::WriteFrom (this=0x870b2e0 aInStr=0x8680e2c
+aCount=254 aRetval=0xbfffe8c8) at nsXBMDecoder.cpp:134
+#4  0x41fadc8f in imgRequest::OnDataAvailable (this=0x87e60d8
+aRequest=0x8798458 ctxt=0x0 inStr=0x8680e2c sourceOffset=0 count=254) at
+imgReques
+t.cpp:796
+#5  0x41fa5f50 in ProxyListener::OnDataAvailable (this=0x8285b98
+aRequest=0x8798458 ctxt=0x0 inStr=0x8680e2c sourceOffset=0 count=254) at imgLoa
+der.cpp:862
+#6  0x41ca0b8b in nsMediaDocumentStreamListener::OnDataAvailable
+(this=0x871a678 request=0x8798458 ctxt=0x0 inStr=0x8680e2c sourceOffset=0 count
+=254)
+    at nsMediaDocument.cpp:114
+#7  0x415e7688 in nsDocumentOpenInfo::OnDataAvailable (this=0x873e740
+request=0x8798458 aCtxt=0x0 inStr=0x8680e2c sourceOffset=0 count=254) at n
+sURILoader.cpp:344
+#8  0x40bb6933 in nsFileChannel::OnDataAvailable (this=0x8798458 req=0x8748a20
+ctx=0x0 stream=0x8680e2c offset=0 count=254) at nsFileChannel.cpp
+:594
+#9  0x40b2d258 in nsInputStreamPump::OnStateTransfer (this=0x8748a20) at
+nsInputStreamPump.cpp:433
+#10 0x40b2ce88 in nsInputStreamPump::OnInputStreamReady (this=0x8748a20
+stream=0x8680e2c) at nsInputStreamPump.cpp:336
+#11 0x401983f7 in nsInputStreamReadyEvent::EventHandler (plevent=0x86cadf4) at
+nsStreamUtils.cpp:118
+#12 0x401bbf9b in PL_HandleEvent (self=0x86cadf4) at plevent.c:673
+#13 0x401bbe50 in PL_ProcessPendingEvents (self=0x80d0fd0) at plevent.c:608
+#14 0x401bf14a in nsEventQueueImpl::ProcessPendingEvents (this=0x80d0ad8) at
+nsEventQueue.cpp:398
+#15 0x409591d0 in event_processor_callback (data=0x80d0ad8 source=4
+condition=GDK_INPUT_READ) at nsAppShell.cpp:186
+#16 0x40958b7d in our_gdk_io_invoke (source=0x8211540 condition=G_IO_IN
+data=0x8210f50) at nsAppShell.cpp:71
+#17 0x404284c6 in g_io_add_watch () from /usr/lib/libglib-1.2.so.0
+#18 0x40429dd8 in g_get_current_time () from /usr/lib/libglib-1.2.so.0
+#19 0x4042a2c1 in g_get_current_time () from /usr/lib/libglib-1.2.so.0
+#20 0x4042a5e5 in g_main_run () from /usr/lib/libglib-1.2.so.0
+#21 0x4033525f in gtk_main () from /usr/lib/libgtk-1.2.so.0
+#22 0x4095961a in nsAppShell::Run (this=0x80d6c48) at nsAppShell.cpp:317
+#23 0x408cf8ea in nsAppShellService::Run (this=0x80d56e0) at
+nsAppShellService.cpp:494
+#24 0x0805e5cd in xre_main (argc=1 argv=0xbffff484 aAppData=0x807500c) at
+nsAppRunner.cpp:1907
+#25 0x0805851c in main (argc=1 argv=0xbffff484) at nsBrowserApp.cpp:58
+
+------------------
+
+#define gopher_binary_width 20
+#define gopher_binary_height 23
+static char gopher_binary_bits[] = {
+   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+   0xff 0x3f 0x00 0x01 0x60 0x00 0x01 0xa0 0x00 0x71 0x26 0x01      EOF
+
+As you can see the image end with a space character when the program assume
+the image to be clean and contain end tag.
+Thus if one is able to control the heap layout it is possible to execute
+arbitrary code.
+
+Here is some details on how to exploit the bug on Linux :
+
+- Use a javascript and allocate a lot of 'local' buffer. I found JC_GC is called
+at the end of the javascript parsing before any image are loaded and will free
+all 'useless' (because local) buffer.
+Thus it is easy to 1) Allocate in some global array a lot of *little bufer* to
+begin so we have the heap layout in a predictable state (no hole).
+2) Allocate a few big buffer with isdigit()-valid character. Because there is no
+more heap hole the 'top chunk' of the heap is expended.
+3) When JC_GC return some memory have been freed and thus following
+allocation will fall in these new heap hole.
+4) When the image is processed the overflowed buffer will be followed by
+isdigit-character (this is junk in the prev_size field of the next struct
+malloc_chunk). Then a '\0' will be written on the LSB of the 'next size' field
+of the next struct malloc_chunk on the heap.
+Because it is easily possible to inject controlled character on the heap
+(actually that could have been done in the few isdigit()-valid buffer) it is
+possible to store fake information on the heap and tricks malloc()/free()/etc
+to parse them.
+Still in the scheme of Doug Lea malloc (linux) this will end by triggering the
+macro UNLINK() which basically insert a heap chunk in a linked list thus
+writing a controlled pointer of us to a controlled address of us.
+One can simply overwrite any function pointer like GOT entry saved %eip
+pointer on the stack and hijack it to point to some injected shellcode.
+
+Exploitation is possible on *BSD / Windows aswell.
+Actual Results:  
+Ability to execute whatever code you want.
+
+Expected Results:  
+Stop me.",cbiesinger,jackerror823,fixed,1,resolved,4,0,20,10,critical,5
+CORE-194330,Printing: Output,CORE,crash on trying to print or print preview the above url,"User-Agent:       Mozilla/5.0 (Windows U Win95 en-US rv:1.2.1) Gecko/20021130
+Build Identifier: Mozilla/5.0 (Windows U Win95 en-US rv:1.2.1) Gecko/20021130
+
+The above url causes mozilla to freeze and need an alt-ctl-del and end task to
+get back from it when you try to print or print preview it (freezes on preparing).
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. Open Browser
+2. Go to http://ato.gov.au/content/notforprofit/29723.htm
+3. Try to Print or Print Preview
+Actual Results:  
+mozilla freezes
+
+Expected Results:  
+Printed or Previewed the print job
+
+I've also seen this in 1.2.1 running on Win98",john,noel.clarkson,fixed,1,resolved,4,0,22,106,critical,5
+MAILNEWS_CORE-340886,Database,MAILNEWS_CORE,Junk status changes to unknown when I delete or separate an attachment,"User-Agent:       Mozilla/5.0 (Windows U Windows NT 5.0 de rv:1.8.0.4) Gecko/20060508 Firefox/1.5.0.4
+Build Identifier: Thunderbird Version 1.5.0.4 (20060516)
+
+When deleting or separating an attachment from an incoming mail the junk status of this mail always changes from no junk (or junk) to unknown (it shows the red question mark). 
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. You get mail which is automatically or manually marked as junk (j) or no junk (shift+j)
+2. Now delete or separate an attachment from this mail
+
+
+Actual Results:  
+You'll see the junk status will change to unknown
+
+Expected Results:  
+Thunderbird shouldn't forget the junk status of a mail.
+
+This is Thunderbird Version 1.5.0.4 with the Mnenhy 0.7.4 extension installed but I don't think that Mnenhy is responsable for this behaviour.",rkent,gabriela,fixed,1,resolved,4,2,20,1105,critical,5
+CORE-313398,XPCOM,CORE,Unoptimized Intel Mac debug build crashes with a misaligned stack,"User-Agent:       Mozilla/5.0 (Macintosh U Intel Mac OS X en) AppleWebKit/417.2 (KHTML like Gecko) Safari/417.1
+Build Identifier: Trunk
+
+On build 8F1099 of Mac OS X on Intel an unoptimized debug build of Firefox crashes on launch in 
+XPTC_InvokeByIndex with a misaligned stack.  The misalignment happens within XPTC_InvokeByIndex 
+itself which doesn't appear to be properly aligning the first call in the inline asm.
+
+Program received signal EXC_BAD_INSTRUCTION Illegal instruction/operand.
+0x8fe12ee4 in __dyld_stub_binding_helper_interface ()
+2: /x $esp = 0xbfffd8b8
+1: x/i $pc  0x8fe12ee4 :       movdqa %xmm032(%esp)
+(gdb) bt
+#0  0x8fe12ee4 in __dyld_stub_binding_helper_interface ()
+#1  0x01008000 in ?? ()
+#2  0x0108e45d in XPTC_InvokeByIndex (that=0x1c3b690 methodIndex=3 paramCount=1 
+params=0xbfffdb4c) at xptcinvoke_unixish_x86.cpp:147
+#3  0x2b1bf00f in XPCWrappedNative::CallMethod (ccx=@0xbfffdd74 mode=CALL_GETTER) at 
+xpcwrappednative.cpp:2139
+#4  0x2b1e6297 in XPCWrappedNative::GetAttribute (ccx=@0xbfffdd74) at xpcwrappednativejsops.cpp:
+1925
+#5  0x2b1c6263 in XPC_WN_GetterSetter (cx=0x1c32280 obj=0x204b068 argc=0 argv=0x1c439c8 
+vp=0xbfffdec4) at xpcwrappednativejsops.cpp:1476
+#6  0x0054da41 in js_Invoke (cx=0x1c32280 argc=0 flags=2) at jsinterp.c:1177
+#7  0x0054de69 in js_InternalInvoke (cx=0x1c32280 obj=0x204b068 fval=33862752 flags=0 
+argc=0 argv=0x0 rval=0xbfffe9bc) at jsinterp.c:1274
+#8  0x0054e149 in js_InternalGetOrSet (cx=0x1c32280 obj=0x204b068 id=29580784 
+fval=33862752 mode=JSACC_READ argc=0 argv=0x0 rval=0xbfffe9bc) at jsinterp.c:1317
+#9  0x0057a70e in js_GetProperty (cx=0x1c32280 obj=0x204b068 id=29580784 vp=0xbfffe9bc) at 
+jsobj.c:2931
+#10 0x0055e1a0 in js_Interpret (cx=0x1c32280 pc=0x1c434ad 5 result=0xbfffed80) at jsinterp.c:
+3327
+#11 0x0054e526 in js_Execute (cx=0x1c32280 chain=0x204af98 script=0x1c43450 down=0x0 
+flags=0 result=0xbfffef10) at jsinterp.c:1407
+#12 0x00512e20 in JS_ExecuteScript (cx=0x1c32280 obj=0x204af98 script=0x1c43450 
+rval=0xbfffef10) at jsapi.c:4009
+#13 0x2b1d35a2 in mozJSComponentLoader::GlobalForLocation (this=0x1c314d0 
+aLocation=0x1c30f60 rel:jsconsole-clhandler.js aComponent=0x1c31600 aGlobal=0xbffff090) at 
+mozJSComponentLoader.cpp:1567
+#14 0x2b1d3803 in mozJSComponentLoader::ModuleForLocation (this=0x1c314d0 
+registryLocation=0x1c30f60 rel:jsconsole-clhandler.js component=0x1c31600 status=<incomplete 
+type>) at mozJSComponentLoader.cpp:917
+#15 0x2b1d42be in mozJSComponentLoader::AttemptRegistration (this=0x1c314d0 
+component=0x1c31600 deferred=0) at mozJSComponentLoader.cpp:755
+#16 0x2b1d488b in mozJSComponentLoader::AutoRegisterComponent (this=0x1c314d0 when=0 
+component=0x1c31600 registered=0xbffff304) at mozJSComponentLoader.cpp:682
+#17 0x2b1d11f2 in mozJSComponentLoader::RegisterComponentsInDir (this=0x1c314d0 when=0 
+dir=0x1c0e110) at mozJSComponentLoader.cpp:590
+#18 0x2b1d128b in mozJSComponentLoader::AutoRegisterComponents (this=0x1c314d0 when=0 
+aDirectory=0x1c0e110) at mozJSComponentLoader.cpp:546
+#19 0x01062178 in nsComponentManagerImpl::AutoRegisterNonNativeComponents (this=0x1c0c910 
+spec=0x1c0e110) at nsComponentManager.cpp:3262
+#20 0x010647cf in nsComponentManagerImpl::AutoRegisterImpl (this=0x1c0c910 when=0 
+inDirSpec=0x0 fileIsCompDir=1) at nsComponentManager.cpp:3232
+#21 0x01064882 in nsComponentManagerImpl::AutoRegister (this=0x1c0c910 aSpec=0x0) at 
+nsComponentManager.cpp:3404
+#22 0x01010d3c in NS_InitXPCOM3_P (result=0xbffff738 binDirectory=0x1c0c3a0 
+appFileLocationProvider=0xbffff768 staticComponents=0x54ab0 componentCount=1) at 
+nsXPComInit.cpp:616
+#23 0x00003433 in ScopedXPCOMStartup::Initialize (this=0xbffff738) at nsAppRunner.cpp:595
+#24 0x00009259 in XRE_main (argc=1 argv=0xbffff8d4 aAppData=0x549e0) at nsAppRunner.cpp:
+2141
+#25 0x000024aa in main (argc=1 argv=0xbffff8d4) at nsBrowserApp.cpp:61
+(gdb) 
+
+
+Reproducible: Always
+
+Steps to Reproduce:
+1) Build Firefox with --disable-optimize --enable-debug and --disable-tests.
+2) Run.
+Actual Results:  
+Firefox crashes.
+
+Expected Results:  
+Not crashing is often considered to be proper behavior.",jaas,eric,fixed,1,resolved,4,0,52,110,critical,5
+RELEASE_ENGINEERING-371325,General,RELEASE_ENGINEERING,Automate dependent tool config file generation,"Items in our central config found at /tools/release/bootstrap.cfg should be automatically propagated to dependent tool configs.
+
+As a part of the process care should be taken to check these new configs into some sort of source control to allow us to manage them systematically and see changesets.
+
+Tools that would need to be configured as a part of release automation based on boostrap.cfg are:
+patcher
+tinderbox
+bouncer
+addons.mozilla.org
+patcher
+
+Others... ?",build,morgamic,fixed,1,resolved,4,0,70,112,critical,5
+CORE-507991,Layout,CORE,Crash [@ nsSprocketLayout::PopulateBoxSizes] with object and position:absoluteoverflow:scroll in binding,"Created attachment 392225
+testcase
+
+I guess this might be related to bug 397596 no idea.
+But since this has a different regression range I'm filing this as a new bug.
+
+See testcase which crashes current trunk build (after hanging for a short while).
+This seems to have regressed between 2009-05-19 and 2009-05-20:
+http://hg.mozilla.org/mozilla-central/pushloghtml?startdate=2009-05-19+04%3A00%3A00&enddate=2009-05-20+09%3A00%3A00
+
+http://crash-stats.mozilla.com/report/index/fdc0c72f-7bc3-47ed-a9f4-a013c2090803?p=1
+0   xul.dll   nsSprocketLayout::PopulateBoxSizes    layout/xul/base/src/nsSprocketLayout.cpp:928
+1  xul.dll  nsSprocketLayout::Layout  layout/xul/base/src/nsSprocketLayout.cpp:249
+2  xul.dll  nsBoxFrame::DoLayout  layout/xul/base/src/nsBoxFrame.cpp:936
+3  xul.dll  nsIFrame::Layout  layout/xul/base/src/nsBox.cpp:543
+4  xul.dll  nsSprocketLayout::Layout  layout/xul/base/src/nsSprocketLayout.cpp:523
+5  xul.dll  nsBoxFrame::DoLayout  layout/xul/base/src/nsBoxFrame.cpp:936
+6  xul.dll  nsBoxFrame::LayoutChildAt  layout/xul/base/src/nsBoxFrame.cpp:2075
+7  xul.dll  LayoutAndInvalidate  layout/generic/nsGfxScrollFrame.cpp:2474
+8  xul.dll  nsGfxScrollFrameInner::LayoutScrollbars  layout/generic/nsGfxScrollFrame.cpp:2527
+9  xul.dll  nsHTMLScrollFrame::Reflow  layout/generic/nsGfxScrollFrame.cpp:871
+10  xul.dll  xul.dll@0x3bb6fe",tnikkel,martijn.martijn,fixed,1,resolved,4,0,40,93,critical,5
+MOZILLA.ORG_GRAVEYARD-500058,Server Operations,MOZILLA.ORG_GRAVEYARD,load monitoring on production-master,Would it be possible to get munin / cacti monitoring on production-master?  I'm interested in tracking CPU usage system load memory/swap usage over time.,oremj,catlee,fixed,1,resolved,4,0,4,8,critical,5
+CORE-351628,Layout: Tables,CORE,[reflow branch] Crash [@ nsTableColFrame::ResetMinCoord], ,nobody,jruderman,fixed,1,resolved,4,0,19,19,critical,5
+MAILNEWS_CORE-444813,Feed Reader,MAILNEWS_CORE,Drag and drop of RSS subscriptions on Windows causes Thunderbird to crash [@ nsDragService::nsDragService],"User-Agent:       Mozilla/5.0 (Windows U Windows NT 5.1 en-US rv:1.9) Gecko/2008052906 Firefox/3.0
+Build Identifier: version 2.0.0.14 (20080421)
+
+When moving RSS feeds between folders using the mouse click-and-hold principle in the manage RSS subscriptions window Thunderbird ofter crashes. It does not occur always  usually crashes after 2 seconds of click-hold).
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. Have mutiple RSS subsriptions over multiple folders with one saved 'unread' search folder accross all RSS folders
+2. Open RSS Subscriptions window
+3. Move some RSS subscriptions between folders using mouse (click+hold -> point to new folder & release mouse click)
+Actual Results:  
+Thunderbird completely crashes & Talkback is activated to report an crash occured.
+
+
+Issue also occured in previous versions. It's very annoying & embarrassing when trying to convert non-Thunderbird users to Thunderbird.",nobody,wim.bos.be,fixed,1,resolved,4,0,12,1347,critical,5
+CORE-254510,Image Blocking,CORE,Bug 200433 regressed by patch in bug 253597,"The patch in bug 253597 regressed the fix from bug 200433 (the ShouldProcess
+never blocks anything now).  See bug 253597 comment 9 for more information.
+
+It'd be nice to fix this before next week's freeze...",mvl,bzbarsky,fixed,1,resolved,4,0,8,27,major,4
+CORE-128371,Layout,CORE,menu items on the left side are not displayed,"From Bugzilla Helper:
+User-Agent: Mozilla/5.0 (X11 U Linux i686 en-US rv:0.9.8) Gecko/20020205
+BuildID:    2002020511
+
+Menu items which you can click on the left edge are not displayed.
+This works with the latest internet explorer.
+
+
+Reproducible: Always
+Steps to Reproduce:
+1.just display the page
+2.
+3.
+
+Actual Results:  the menu items were not displayed and I could not click them
+
+Expected Results:  It should have displayed the menu items.",attinasi,dharter,fixed,1,resolved,4,0,7,240,major,4
+CORE-228804,MathML,CORE,mathml rendering is worse on MacOS X after adding Mathematica fonts in 1.3b and later,"User-Agent:       Mozilla/5.0 (Macintosh U PPC Mac OS X Mach-O en-US rv:1.3b) Gecko/20030212
+Build Identifier: Mozilla/5.0 (Macintosh U PPC Mac OS X Mach-O en-US rv:1.3b) Gecko/20030212
+
+See screenshot at:
+
+http://web.mit.edu/jamous/www/mathml/mozilla1.3b.gif
+
+on MathML torture test (see URL above) tests 5 8 13 16 18 19 21 and 22
+are broken.
+
+This problem has happened in all the Mozilla versions since 1.3 beta.
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. get Mozilla version 1.3 beta or any version later
+2. go to the MathML torture test at:
+http://www.mozilla.org/projects/mathml/demo/texvsmml.xhtml
+
+
+Actual Results:  
+screenshot at:
+
+http://web.mit.edu/jamous/www/mathml/mozilla1.3b.gif
+
+Expected Results:  
+give a MathML rendering at least as good as the ones obtained with versions 1.3a
+and earlier -- see following screenshot with Mozilla 1.3a:
+
+http://web.mit.edu/jamous/www/mathml/mozilla1.3a.gif
+
+This bug showed up between versions
+
+1.3 alpha and 1.3 beta.",rbs,jamous,fixed,1,resolved,4,11,34,649,major,4
+BUGZILLA-342053,Bugzilla-General,BUGZILLA,Quicksearch.pm defines $cgi outside routines,"Quicksearch.pm defines my $cgi = Bugzilla->cgi outside routines. This makes perl -cwT buglist.cgi to fail because buglist.cgi uses Quicksearch.pm. I saw this problem a few seconds before committing my patch about the removal of versioncache. )
+
+We have to fix this before committing my patch about versioncache.",LpSolit,LpSolit,fixed,1,resolved,4,0,6,0,major,4
+SEAMONKEY-236010,Installer,SEAMONKEY,INI parser reads memory beyond EOF,"valgrind spews a lot of these:
+ strchr (mac_replace_strmem.c:113)
+ nsINIParser::FindKey(char* char* char* int*) (nsINIParser.cpp:245)
+ nsINIParser::GetString(char* char* char* int*) (nsINIParser.cpp:108)
+ nsINIParser::GetStringAlloc(char* char* char** int*) (nsINIParser.cpp:122)
+Address 0x58EE18A is 0 bytes after a block of size 3238 alloc'd
+ malloc (vg_replace_malloc.c:160)
+ nsINIParser::nsINIParser(char*) (nsINIParser.cpp:59)
+ nsXIContext::LoadResources() (nsXIContext.cpp:137)
+ nsXInstaller::ParseConfig() (nsXInstaller.cpp:95)
+
+the file is read into a buffer just big enough for its contents.  There is no
+room for NULL termination.",ajschult784,ajschult784,fixed,1,resolved,4,0,4,0,major,4
+WEBSITES-444826,mozillalabs.com,WEBSITES,spam found on labs forum,"reported to webmaster@mozilla.com.   we should get this cleaned off and figure out captcha or bot protection mechanism.   maybe something along the lines that morgamic is thinking about for addons.mozilla.org
+
+
+You have a spam profile on your forum at
+https://labs.mozilla.com/forum/index.php?action=profileu=4105
+
+We are receiving form spam (see below) linking to this page.
+
+
+-----Original Message-----
+From: Website [mailto:safetyp1@box230.bluehost.com] 
+Sent: Thursday July 10 2008 6:29 PM
+To: info@safetypartnersinc.com
+Subject: Information Request
+
+
+The following information request has been submitted from the website.
+
+ From:   Mr. Devidr Devidr
+     Hello
+     Home
+
+ Address:  devid574@gmail.com
+     devid574@gmail.com
+     mexico NY  856414
+
+ Phone:   13 255 645 135
+ Fax:   13 255 645 135
+ E-mail:   devid574@gmail.com
+
+ INQUIRY:
+
+ Hi! Nice place. My sites:
+fake coach purses
+discount kitchen cabinets
+http://fakecoachpurses.blogs.experienceproject.com/49186.html
+https://labs.mozilla.com/forum/index.php?action=profileu=4105
+[url=http://fakecoachpurses.blogs.experienceproject.com/49186.html]fake
+coach purses[/url]
+[url=https://labs.mozilla.com/forum/index.php?action=profileu=4105]discount
+kitchen cabinets[/url]
+
+
+ ==================== END ====================",morgamic,chofmann,fixed,1,resolved,4,0,17,241,major,4
+CORE-187503,Web Painting,CORE,Overflown content is rendered with black background,"User-Agent:       Mozilla/5.0 (Windows U Windows NT 5.1 en-US rv:1.3b) Gecko/20030102
+Build Identifier: Mozilla/5.0 (Windows U Windows NT 5.1 en-US rv:1.3b) Gecko/20030102
+
+When scrolling into not visible content on an element that has overflow:auto
+shows the content with a black blackground color.
+This bug might be the same as closed bug 172227 but that one has been fixed so
+I was suggested to open a new one.
+
+
+
+Reproducible: Always
+
+Steps to Reproduce:",roc,bugzilla,fixed,1,resolved,4,0,15,14,major,4
+CORE_GRAVEYARD-124178,GFX,CORE_GRAVEYARD,Hang on DHTML [reflow/painting],"a new window opens and a few secons later mozilla hangs.
+Doesn't hang in mozilla0.9.7
+using 2002020603 on win-xp",dcone,markushuebner,fixed,1,resolved,4,1,20,229,major,4
+CORE-121489,Networking: File,CORE,nsIFile does not return null when top of volume is reached,"286 /**
+287 * Parent will be null when this is at the top of the volume.
+288 */
+289 readonly attribute nsIFile parent
+
+Looking at nsLocalFileUnix and nsLocalFileWin that's not true in those impls.
+In particular the parent of / on unix is /.  Not sure what the parent is on
+Win exactly.  Could we fix the comment or the impls please?  I just got into
+an infinite loop because of this (was walking up the dir tree and assumed that
+I would hit null when I hit the top).",pete,bzbarsky,fixed,1,resolved,4,0,23,226,major,4
+CORE-361273,JavaScript Engine,CORE,Assert fail: cg->stackDepth >= 0 at jsemit.c:164,"In low memory conditions it's possible to get the following assertion failure reported (stack trace will follow shortly):
+
+Assertion failure: cg->stackDepth >= 0 at jsemit.c:164
+
+The root cause is this error handling in jsemit:
+
+#define EMIT_ATOM_INDEX_OP(op atomIndex)                                     \
+    JS_BEGIN_MACRO                                                            \
+        if (!EmitAtomIndexOp(cx op atomIndex cg) < 0)                      \
+            return JS_FALSE                                                  \
+    JS_END_MACRO
+
+EmitAtomIndexOp returns a JSBool so any error returned will actually be ignored by mistake leading to the assert fail later.
+
+In a release build we get stack underflow reported when the compiled script is run and JS_ArenaAllocate can get itself into an infinite loop that only exits when malloc fails (more details on this soon).",brendan,gavin.reaney,fixed,1,resolved,4,0,10,0,major,4
+CORE-156764,XUL,CORE,Interface hangs after clicking onto a tooltip,"Sometimes when moving the mouse to a bookmark in the personal toolbar a
+tooltip appears but doesn't disappear (maybe I'm too fast?). When I accidentally
+click onto this tooltip it disappears but the whole UI hangs (can't click onto
+any buttons or menu). Only the local window hangs the only option remaining is
+to close it and open a new one.",jag+mozilla,chtephan,fixed,1,resolved,4,1,29,210,major,4
+BUGZILLA-343566,Testing Suite,BUGZILLA,Runtests test 004template.t fails on some systems with a complaint about RELATIVE,"This seems to be a relative of bug 329295 but addint . or ./ to PATH does not help.
+
+On some systems $file (in t/004) has a leading ./ that causes trouble.  Filtering that out seems to help the situation.",LpSolit,bugreport,fixed,1,resolved,4,0,9,0,major,4
+FIREFOX-356789,General,FIREFOX,tinymce wysiwyg editor does not load,"User-Agent:       Mozilla/5.0 (Windows U Windows NT 5.0 fr rv:1.8.1) Gecko/20061003 Firefox/2.0
+Build Identifier: Mozilla/5.0 (MAC) Gecko/20061003 Firefox/2.0 RC2
+
+TinyMCE WYSIWYG editor not does not render the content to be edited on initial
+
+Reproducible: Always
+
+Steps to Reproduce:
+1.Go to the web page with Firefox RC 2.0 on Mac OS X 10.4.8
+2.see the beautiful not editable textarea
+3.
+
+Actual Results:  
+The editor does not load and not allow you to edit the content in the WYSIWYG
+interface.
+
+Expected Results:  
+The editor should load and allow you to edit the content in the WYSIWYG
+interface.",nobody,capripot,fixed,1,resolved,4,0,2,2,major,4
+RELEASE_ENGINEERING-460843,General,RELEASE_ENGINEERING,tracemonkey unittest machine burning (moz2-win32-slave14),"http://tinderbox.mozilla.org/showbuilds.cgi?tree=TraceMonkey
+
+It is stuck removing a file and called WINNT 5.2 mozilla-central moz2-win32-slave14 dep unit test but I think that is a misnomer.",nthomas,sayrer,fixed,1,resolved,4,0,6,1,major,4
+SEAMONKEY-208903,Download & File Handling,SEAMONKEY,download manager doesn't work with non-ASCII file names.,"The patch for bug 175881 introudced this problem. (attachment 124826).
+The patch has the following line 
+
+-    gStatusBar.label = getSelectedItem().id
++    gStatusBar.label = getFileForItem(getSelectedItem()).path
+
+The noticable change introduced by this is that the status bar shows 'garbage'
+characters for non-ASCII file names. Going back to 
+|getSelectedItem().id| (chopping off 'file://' at the beginning if necessary)
+will solve this 'UI' regression. However that's not touching the root cause of
+the problem because none of command buttons is functional (all of them is dimmed
+out) when a non-ASCII file is  selected  with or without the change. The file
+operation in other parts of Mozilla work fine so that nsIFile and nsILocalFile
+are not to blame. [1]
+
+getFileForItem() is defined in 
+http://lxr.mozilla.org/seamonkey/source/xpfe/components/download-manager/resources/downloadmanager.js#357
+as
+357 function getFileForItem(aElement)
+358 {
+359   var itemResource = gRDFService.GetUnicodeResource(aElement.id)
+360   var fileResource = gDownloadView.database.GetTarget(itemResource
+gNC_File true)
+361   fileResource =
+fileResource.QueryInterface(Components.interfaces.nsIRDFResource)
+362   return createLocalFile(fileResource.Value)
+363 }
+364 
+365 function createLocalFile(aFilePath) 
+366 {
+
+
+I added a couple of 'dump()' statements in createLocalFile(aFilePath) and
+printed out |aFilePath).  aFilePath is zero-extended UTF-8. For instance 
+U+00A0 (in UTF-8 it's 0xC2 0x80) aFilePath should have 'U+00A0'. Instead it
+has 'U+00C2 U+0080'. This symptom suggests that somewhere in RDF-related code
+ACString is used where AUTF8String should have been used. 
+
+[1] Recently I've been working on enabling 'Unicode' file I/O in Windows (bug
+162361) and with that enabled Mozilla-Windows has the same problem as Linux
+under UTF-8 locale. Therefore I think this is an XP issue althouhg I'm filing
+this under Linux for now.",jshin1987,jshin1987,fixed,1,resolved,4,0,39,50,major,4
+CORE-529119,Document Navigation,CORE,Funky behavior with XUL error pages,"There is some funky behavior going on recently with XUL error pages.  'Try Again' button loads the previous page you were on and the back button on the navigation bar seems to pick a random spot in the history to load.
+
+STR:
+1) Load http://www.google.com in a new tab
+2) Go to http://www.23456789iuybh87g.com
+3) Hit the 'Try Again' button google loads
+4) Repeat steps 1-2
+5) Hit the back button on the navigation bar and some random page from the history loads and not google
+
+Regressed between 20091110 and 20091111
+Pushlog for that range: http://hg.mozilla.org/mozilla-central/pushloghtml?fromchange=f4ef40336cc6&tochange=2eb351cc47d3",honzab.moz,u88484,fixed,1,resolved,4,1,51,2,major,4
+CORE-503950,Plug-ins,CORE,OS/2 bustage fix for bug503377,"User-Agent:       Mozilla/5.0 (OS/2 U Warp 4.5 en-US rv:1.9.1) Gecko/20090621 Firefox/3.5
+Build Identifier: 
+
+E:/usr/src/hg/mozilla-central/modules/plugin/base/src/nsPluginNativeWindowOS2.cpp: In function 'void* PluginWndProc(HWND ULONG void* void*)':
+E:/usr/src/hg/mozilla-central/modules/plugin/base/src/nsPluginNativeWindowOS2.cpp:182: error: no matching function for call to 'nsIPluginInstance::GetMIMEType(char**)'
+../../../../dist/include/nsIPluginInstance.h:181: note: candidates are: virtual nsresult nsIPluginInstance::GetMIMEType(const char**) 
+E:/usr/src/hg/mozilla-central/modules/plugin/base/src/nsPluginNativeWindowOS2.cpp: In member function 'nsresult nsPluginNativeWindowOS2::SubclassAndAssociateWindow()':
+E:/usr/src/hg/mozilla-central/modules/plugin/base/src/nsPluginNativeWindowOS2.cpp:325: warning: ISO C++ forbids casting between pointer-to-function and pointer-to-object
+E:/usr/src/hg/mozilla-central/modules/plugin/base/src/nsPluginNativeWindowOS2.cpp:333: warning: unused variable 'win'
+E:/usr/src/hg/mozilla-central/modules/plugin/base/src/nsPluginNativeWindowOS2.cpp: In member function 'nsresult nsPluginNativeWindowOS2::UndoSubclassAndAssociateWindow()':
+E:/usr/src/hg/mozilla-central/modules/plugin/base/src/nsPluginNativeWindowOS2.cpp:355: warning: ISO C++ forbids casting between pointer-to-function and pointer-to-object
+make.exe[5]: *** [nsPluginNativeWindowOS2.o] Error 1
+
+after checkin for bug503377
+
+Reproducible: Always",wuno,wuno,fixed,1,resolved,4,0,4,1,major,4
+MOZILLA.ORG_GRAVEYARD-489155,Server Operations,MOZILLA.ORG_GRAVEYARD,Put video file on videos.mozilla.org,"Please put this video file:
+http://labs.silverorange.com/files/mozilla-videos/en.mp4
+
+In this dir:
+http://videos.mozilla.org/firefox3/screencast1/",oremj,steven,fixed,1,resolved,4,0,4,3,major,4
+CORE-401564,Networking: HTTP,CORE,HTTP ACCEPT header not preserved after GET redirect (HTTP 302 HTTP 303 HTTP 307),"User-Agent:       Mozilla/5.0 (Windows U Windows NT 5.1 en-GB rv:1.8.1.8) Gecko/20071008 Firefox/2.0.0.8
+Build Identifier: Mozilla/5.0 (Windows U Windows NT 5.1 en-GB rv:1.8.1.8) Gecko/20071008 Firefox/2.0.0.8
+
+The HTTP ACCEPT header is not preserved when after a GET redirect. That leads that the second GET is not using the original HTTP ACCEPT header but is reset to the standard.
+
+This is a really important feature for the proper implementation of RESTful architectures. I'm currently developing some RESTful prototypes and this feature is a must when dealing with aliasing of resources for instance in order to access resources by their ID or any other resource key field (as its unique name). The problem is that the http accept header in particular is very important to determine the proper format to de-reference to the resource to (as when using Ruby on Rails respond_to in order to determine the content-type to respond with).
+
+
+
+Reproducible: Always
+
+Steps to Reproduce:
+http://localhost:3034/elements/ApplicantDetails
+
+GET /elements/ApplicantDetails HTTP/1.1
+Host: localhost:3034
+User-Agent: Mozilla/5.0 (Windows U Windows NT 5.1 en-GB rv:1.8.1.8) Gecko/20071008 Firefox/2.0.0.8
+Accept: application/json
+Accept-Language: en-gbes-esq=0.7enq=0.3
+Accept-Encoding: gzipdeflate
+Accept-Charset: ISO-8859-1utf-8q=0.7*q=0.7
+Keep-Alive: 300
+Connection: keep-alive
+X-Requested-With: XMLHttpRequest
+X-Prototype-Version: 1.5.0
+Referer: http://localhost:3034/elements/
+Cookie: _XMLDictionaryREST_session_id=BAh7CDoOcmV0dXJuX3RvIg8vZWxlbWVudHMvOgtsb2NhbGUiCmVuLWdiIgpm%250AbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAG%250AOgpAdXNlZHsA--3392c9915ea7c440fd48aca0423dedd0e26f5595
+
+HTTP/1.x 302 Moved Temporarily
+Content-Length: 99
+Connection: close
+Date: Mon 29 Oct 2007 14:55:47 GMT
+Status: 302 Found
+Location: http://localhost:3034/elements/96
+X-Runtime: 0.01500
+Cache-Control: no-cache
+Server: Mongrel 0.3.13.3
+Content-Type: text/html charset=utf-8
+----------------------------------------------------------
+http://localhost:3034/elements/96
+
+GET /elements/96 HTTP/1.1
+Host: localhost:3034
+User-Agent: Mozilla/5.0 (Windows U Windows NT 5.1 en-GB rv:1.8.1.8) Gecko/20071008 Firefox/2.0.0.8
+Accept: text/xmlapplication/xmlapplication/xhtml+xmltext/htmlq=0.9text/plainq=0.8image/png*/*q=0.5
+Accept-Language: en-gbes-esq=0.7enq=0.3
+Accept-Encoding: gzipdeflate
+Accept-Charset: ISO-8859-1utf-8q=0.7*q=0.7
+Keep-Alive: 300
+Connection: keep-alive
+Referer: http://localhost:3034/elements/
+Cookie: _XMLDictionaryREST_session_id=BAh7CDoOcmV0dXJuX3RvIg8vZWxlbWVudHMvOgtsb2NhbGUiCmVuLWdiIgpm%250AbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAG%250AOgpAdXNlZHsA--3392c9915ea7c440fd48aca0423dedd0e26f5595",scott.gregory.west,anicola.bugzilla,fixed,1,resolved,4,8,36,2312,major,4
+CORE-328421,Graphics,CORE,Text for links disappears and only underlines are visible,"User-Agent:       Mozilla/5.0 (Windows U Windows NT 5.0 en-US rv:1.9a1) Gecko/20060223 Firefox/1.6a1
+Build Identifier: Mozilla/5.0 (Windows U Windows NT 5.0 en-US rv:1.9a1) Gecko/20060223 Firefox/1.6a1
+
+On https://mustang.dev.java.net/ lot of links dont show the text. Only an underline appears instead
+
+Reproducible: Always
+
+Steps to Reproduce:
+1.Browse to https://mustang.dev.java.net/
+2. Look at Download Mustang. Below this one should see a bulleted list of Links like Latest Binary Mustang SnapshotsLatest Mustang Source Snapshots etc
+3. Only bullets and underlines are displayed no text
+4. Similar problems can be seen under Links and Feedback section
+
+Actual Results:  
+No text displayed for certain links
+
+Expected Results:  
+Links as well as text should get displayed. This used to work before switch to Cairo",nobody,jayramj,fixed,1,resolved,4,0,7,7,major,4
+BUGZILLA-58242,User Accounts,BUGZILLA,relogin.cgi fails to delete server's copy of the cookie,"I found it odd that relogin.cgi didn't clear out someone's entry(ies) from the
+logincookies table after it logged them out relying instead on
+confirm_login() to clear them after they get 30 days old.  A table can fill up
+fast that way.  I've solved this by adding these two lines to relogin.cgi just
+after the line that says 'require CGI.pl':
+
+ConnectToDatabase()
+SendSQL(delete from logincookies where userid= .
+DBname_to_id(url_decode($::COOKIE{Bugzilla_login})))
+
+(The url_decode is in there because I found I sometimes had %40 instead of @
+in the Bugzilla_login cookie and thus it wouldn't recognize the login...)
+
+Just wanted to share :)",myk,phee,fixed,1,resolved,4,0,7,465,minor,2
+TECH_EVANGELISM_GRAVEYARD-234372,English US,TECH_EVANGELISM_GRAVEYARD,The navigation in Yahoo Mail (Inbox Draft Sent etc links) is stretched beyond the width of the screen.,"User-Agent:       
+Build Identifier: Mozilla/5.0 (Windows U Windows NT 5.1 en-US rv:1.6) Gecko/20040206 Firefox/0.8
+
+The navigation part of Yahoo Mail is way wider than it is in IE.  I mean it
+covers the ENTIRE screen and you have to use a highly-annoying horizontal scroll
+bar at the bottom.
+
+Reproducible: Always
+Steps to Reproduce:
+1. Log into Yahoo mail.
+2. If the problem did not happen in the first try read a message.
+3. After reading 1-2 messages it ALWAYS happens to me.
+Actual Results:  
+The navigation part (with inbox etc links) was very very wide.
+
+Expected Results:  
+It should have stayed neatly on the left side as the Yahoo web designers
+obviously intended it to.
+
+I'm running Mozilla Firebird (I mean Firefox) with a Feb 14th nightly build. I'm
+in 1024x768 screen resolution.",english-us,jwdawe,fixed,1,resolved,4,0,2,0,minor,2
+WEBTOOLS_GRAVEYARD-324513,Tinderbox,WEBTOOLS_GRAVEYARD,newly created tinderbox 404s and indexes for http://tinderbox.mozilla.org/Mozilla1.8.0-l10n-da/ URLs,"If you don't use the showbuilds.cgi?tree=Foo URLs but /Foo/ you get an index
+of the directory as long as there are no builds on that box yet.
+
+panel.html even 404s.
+
+It should give a tree is open/closed message instead I guess.
+
+Actually for a newly created tree the showbuilds.cgi itself doesn't mention
+open or closed either.",cls,axel,fixed,1,resolved,4,0,4,150,minor,2
+SEAMONKEY-322240,Preferences,SEAMONKEY,Various pref panel items missing accesskeys.,"Various pref panel items missing accesskeys that I didn't find a specific Component for:
+
+  Appearance/
+    Themes/
+      Theme to use-box.
+      Get New Themes-link.
+    Language and Content Packs/
+      Installed language packs:-box.
+      Installed content packs:-box.
+
+  Nagivator/
+    Display on-combobox.
+    Languages/
+      Languages in order of preference:-box.
+    Helper Applications/
+      File types:-box.
+      When encountered:-textbox.
+      PFS checkbox.
+    Smart Browsing/
+      Domain guessing checkbox.
+      Advanced.../
+        Entire dialog.
+
+  Roaming User/
+    Server Information dropdown.",wladow,vhaarr+bmo,fixed,1,resolved,4,0,7,1094,minor,2
+ADDONS.MOZILLA.ORG_GRAVEYARD-350096,Administration,ADDONS.MOZILLA.ORG_GRAVEYARD,Update Mozilla and Seamonkey Valid App Versions,"User-Agent:       Mozilla/5.0 (X11 U Linux i686 en-US rv:1.8.1b2) Gecko/20060824 BonEcho/2.0b2
+Build Identifier: Mozilla/5.0 (X11 U Linux i686 en-US rv:1.8.1b2) Gecko/20060824 BonEcho/2.0b2
+
+An author reported to me he got the following error when uploading his or her extension:
+> Error! The MaxAppVer for Mozilla of 1.7.12 in install.rdf is invalid.
+> Error! The MaxAppVer for SeaMonkey of 1.0.3 in install.rdf is invalid.
+
+If not done already these versions should be added as well as the latest release builds (Mozilla 1.7.13 and Seamonkey 1.0.4)
+
+Reproducible: Didn't try",cameron,osaier,fixed,1,resolved,4,0,2,7,minor,2
+FIREFOX-921942,Session Restore,FIREFOX,Scroll position isn't restored in background tabs after session restore,"With Firefox set to restore the current windows and tabs:
+- Open any web page A and scroll down the page a bit
+- Open another web page B in another tab also scroll down a bit
+- Make sure tab B is the current/active one then restart Firefox
+- Notice that the scroll position on tab B has been restored correctly whereas the scroll position on tab A (background tab) isn't restored
+
+This is with Firefox 25 beta 3. The same issue happens with a brand new profile.",ttaubert,ahmadsamir3891,fixed,1,resolved,4,1,46,80,minor,2
+THUNDERBIRD-431217,Message Compose Window,THUNDERBIRD,Send button should be disabled until we have a recipient,From SM Bug 104973 – Send button should be disabled until we have a recipient,acelists,vseerror,fixed,1,resolved,4,2,42,1815,minor,2
+MOZILLA.ORG_GRAVEYARD-308927,Server Operations,MOZILLA.ORG_GRAVEYARD,Send .ics files as text/calendar (Cannot subscribe to holidays calendars),"User-Agent:       Mozilla/5.0 (X11 U Linux i686 en-US rv:1.7.10) Gecko/20050911 Firefox/1.0.6 (Debian package 1.0.6-5)
+Build Identifier: Mozilla/5.0 (X11 U Linux i686 en-US rv:1.7.10) Gecko/20050911 Firefox/1.0.6 (Debian package 1.0.6-5)
+
+From the holidays calendar instruction:
+=====
+We've got some calendar holiday files available for download. To add these to
+your calendar install the Calendar and click on the links below. You will be
+prompted to subscribe to them. That way you don't have to continually download them.
+=====
+
+Clicking on the links doesn't work nor in Calendar/Firefox-1.0.6 neither in
+Calendar/Mozilla-1.7.11 (both as Debian packages) because the link are in the
+http:// form not in the webcal:// form. If I manually open the link as
+webcal://[link] I can subscribe.
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. Install the calendar extension
+2. Open http://www.mozilla.org/projects/calendar/caldata/EnglishHolidays.ics
+
+Actual Results:  
+The calendar is open as a plain text page in the browser.
+
+Expected Results:  
+The calendar extension should ask to subscribe to the calendar.
+
+I tested only on GNU/Linux but I'm 100% sure that the problem is present in all
+platforms/OSes.",justdave,luca,fixed,1,resolved,4,0,7,115,minor,2
+BUGZILLA-298306,Reporting/Charting,BUGZILLA,For new products the charting error message The tool which gathers bug counts has not been run yet is misleading,"User-Agent:       Mozilla/4.0 (compatible MSIE 6.0 Windows NT 5.0)
+Build Identifier: Bugzilla 2.18
+
+I have created a schedule task Collectstats.pl. After that old chart was 
+not displaying internal error. But as I create a new product and then run this 
+scheduled task. After that open the Old Chart and select old products name 
+in Product and click Continue it is not displaying any error. but if I 
+select new product's name in Product option and click Continue it is 
+displaying error message The tool which gathers bug counts has not been run 
+yet.
+
+Reproducible: Always
+
+Steps to Reproduce:
+1.Create new product.
+2.Run the scheduled task collectstats.pl
+3.Open the Old Chart and select new product name in Product and 
+click Continue.
+Actual Results:  
+URL: http://bugzilla:81/reports.cgi?product=Shinsat&datasets=NEW%
+3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A
+
+Displaying Internal error The tool which gathers bug counts has not been run 
+yet.
+
+Expected Results:  
+Shouldn't displayed any error. And should displayed graph with latest data.",wurblzap,mkumar,fixed,1,resolved,4,0,11,72,minor,2
+CORE-328745,JavaScript Engine,CORE,toSource: unnecessary sharp variables,"Consider the following code for js shell:
+
+var x = [] x.foo = x
+
+var y = {} y.f = function() { } y.f.bar = y.f
+
+print(uneval(x))
+print(uneval(y))
+
+Currently it prints:
+
+#1=[]
+({f:#1=(function () {})})
+
+where #1 is a leftover from the fact that toSource for Object and Array consider that all enumeratable properties from the object graph would be serialized. See MarkSharpObjects from jsobj.c But this is not the case when toSource does not include all the properties as above example demonstrates.
+
+It would be nice if unnecessary sharp variables would be avoided.",general,igor,fixed,1,resolved,4,1,3,2181,minor,2
+CORE-130767,Layout,CORE,table content computed differently than div content.,"tables has set:
+border-style: none
+padding: 0
+margin: 0
+width: 100%
+div has set:
+nothing that should affect this
+
+sometimes the table and div line up (ie have the save width) sometimes they
+don't.  (if I up'ed my resolution they lined up fine.)  I'm guessing there's a
+floating point involved here someplace that is behaving differently between the
+two (this is the only thing I can think of besides my code being invalid but
+I'm pretty sure my code is right).",attinasi,sproctor,fixed,1,resolved,4,0,19,1757,minor,2
+BUGZILLA-161356,Documentation,BUGZILLA,mention additional perl module,"for my suse 7.1 linux I had to install
+   perl -MCPAN -e 'install File::Temp'
+before I could do
+   perl -MCPAN -e 'install Template'
+(the dependency wasn't picked up automatically.
+
+So you might want to add File::Temp to the list of modules on that page.
+
+Cheers!
+
+Andy",bz,astenger,fixed,1,resolved,4,0,9,90,minor,2
+CORE-159108,Layout: Tables,CORE,border-collapse: collapse. table borders should be reported as overflow,"From Bugzilla Helper:
+User-Agent: Mozilla/5.0 (X11 U Linux i686 en-US rv:1.1b) Gecko/20020722
+BuildID:    2002072204
+
+On the test page the border on the top and left sides of the table disappears.
+It actually appears as if the border disappears halfway in under the
+content/background och the cells. If the border is 4px wide 2 pixels will be
+visible at all sides of the table. If the border is 2px wide 1 pixel will be
+visible at all sides etc. 1 pixel obviously becomes either 1 or 0 pixels.
+
+Without border-collapse: collapse everything works as expected.
+
+Reproducible: Always
+Steps to Reproduce:
+1. Load the test page.
+2. Look at the borders around the table.
+
+Actual Results:  The border is invisible (or width: < 1px) on the top and left
+sides.
+
+Expected Results:  There should be 1px borders on all sides.",bernd_mozilla,mavos,fixed,1,resolved,4,4,15,417,minor,2
+CAMINO_GRAVEYARD-306613,Preferences,CAMINO_GRAVEYARD,Can't add pref via about:config / about:config contextual menu missing,"In Fx you can ctrl-click on an about:config entry and get a contextual menu
+which allows you to create a new pref (for instance to add
+permissions.default.script which does not exist by default) to lock a given
+setting to reset a setting to modify a setting to toggle a setting copy name
+or copy value.  (The latter four seem somewhat superfluous esp. as double-click
+already toggles or modifies depending on the pref type.)  Camino shows the page
+contextual menu instead.
+
+These are useful (esp for QA!) and allow modifications and additions without the
+quit-edit-restart merry-go-round we currently have in Camino for some prefs.",chris,alqahira,fixed,1,resolved,4,3,32,1635,minor,2
+CORE-204068,Security: CAPS,CORE,Error pages don't work with capability.principal.* preferences set,"This is a little late spin off from bug 156997. That bug implemented better
+looking error pages. Especially see comments 39-43 there. When some prefs
+starting with capability.principal.codebase.* are set the error pages only
+consist of the Try again-Link which doesn´t even work.
+
+Steps to reproduce:
+1. Enable error pages (user_pref(browser.xul.error_pages.enabled true))
+2. Add the following lines to your preferences:
+user_pref(capability.principal.codebase.p0.granted UniversalXPConnect)
+user_pref(capability.principal.codebase.p0.id http://bugzilla.mozilla.org)
+3. Start Mozilla Navigator.
+4. Type some random string in the URL bar and press return to display the error
+page for DNS errors or do something else to provoke an error page.
+5. See the page with only the Try again link in it.
+
+When you try the same without the both capability.principal.codebase.* lines in
+your Preferences you see the normal error pages.
+
+I don´t know what for those two lines are so I don´t really understand what´s
+going on here. Probably this bug is just a symptom of a more general issue.",caillon,Stefan.Borggraefe,fixed,1,resolved,4,0,7,181,minor,2
+CORE-230578,ImageLib,CORE,some horizontal lines of bitmap fail to load,"User-Agent:       Mozilla/5.0 (Windows U Windows NT 5.1 en-US rv:1.5) Gecko/20031007 Firebird/0.7
+Build Identifier: Mozilla/5.0 (Windows U Windows NT 5.1 en-US rv:1.5) Gecko/20031007 Firebird/0.7
+
+this is a random bitmap generator from random.org.
+when loaded about 15% of the horizontal lines are white.
+but this is corrected if i minimize and recall the window.
+this problem does not happen with smaller images.
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. load  http://www.random.org/cgi-bin/randxbm?width=512&height=512
+2.
+3.
+
+Actual Results:  
+some horizontal lines are white.
+
+Expected Results:  
+all lines should have displayed random black or white pixels.",tor,chrisdlugosz,fixed,1,resolved,4,0,7,2,minor,2
+CORE-272705,Layout: Text and Fonts,CORE,Error ``document.getElementById(cmd_SwitchTextDirection) has no properties'' [xs] in file ``chrome://communicator/content/utilityOverlay.js'' line 387 character 0.,"Error ``document.getElementById(cmd_SwitchTextDirection) has no properties''
+[xs] in file ``chrome://communicator/content/utilityOverlay.js'' line 387
+character 0.
+Stopped for error handler.
+#0: function goUpdateGlobalEditMenuItems() in
+ line 387
+385: try {
+386: // XXX: implement controller for cmd_SwitchTextDirection
+387: document.getElementById('cmd_SwitchTextDirection').setAttribute('disabled'
+388: !document.commandDispatcher.focusedElement)
+389: }
+
+This happens in various windows including venkman it's amazingly annoying.",timeless,timeless,fixed,1,resolved,4,0,9,44,minor,2
+TECH_EVANGELISM_GRAVEYARD-145516,German,TECH_EVANGELISM_GRAVEYARD,dzbank.de - unable to visit,"i see lots of funny script-coding in the left frame.
+
+mozilla build 20020510",german,renke,fixed,1,resolved,4,0,9,2175,minor,2
+NSS-338021,Libraries,NSS,Dead code in sec_pkcs12_install_bags (security/nss/lib/pkcs12/p12d.c),Please see the sample URL. The test at line 2860 will never succeed because the block at line 2849 returns if |rv| is nonzero.,nelson,kherron+mozilla,fixed,1,resolved,4,0,5,3206,minor,2
+CORE-377747,General,CORE,Format string issue in JSSH extension,"User-Agent:       Mozilla/4.0 (compatible MSIE 7.0 Windows NT 6.0 SLCC1 .NET CLR 2.0.50727 Media Center PC 5.0 .NET CLR 3.0.04506 .NET CLR 1.1.4322 InfoPath.2)
+Build Identifier: Mozilla/5.0 (Windows U Windows NT 6.0 en-US rv:1.9a3pre) Gecko/20070322 Minefield/3.0a3pre
+
+Not sure were this would get logged looked around for a better place to log it.
+
+A classic format string bug exists in the nsJSSH.cpp in the Print function when network input is printed via printf.
+
+       printf(JS_GetStringBytes(str)) // use cout if no output stream given.
+
+See URL for code line link.
+
+The fix is easy:
+
+       printf(%s JS_GetStringBytes(str)) // use cout if no output stream given.
+
+
+
+Reproducible: Always
+
+Steps to Reproduce:
+1.
+2.
+3.",nobody,msg,fixed,1,resolved,4,0,2,49,minor,2
+OTHER_APPLICATIONS-363323,DOM Inspector,OTHER_APPLICATIONS,DOM View is really inefficient with setting what is to be shown,"From comment in url:
+
+Current code:
+menuitem -> command -> toggler -> setter -> pref -> observer -> setter -> pref
+Proposed code:
+menuitem -> command -> toggler -> pref -> observer -> setter
+
+arguably we should rebuild() in the observer too.",sdwilsh,sdwilsh,fixed,1,resolved,4,0,8,36,normal,2
+RELEASE_ENGINEERING-525991,General,RELEASE_ENGINEERING,Create Major Update from 3.0.15 to 3.5.5,,catlee,catlee,fixed,1,resolved,4,0,7,8,normal,2
+OTHER_APPLICATIONS-318859,ChatZilla,OTHER_APPLICATIONS,DCC functionality in ChatZilla isn't functional.,"User-Agent:       Mozilla/5.0 (Macintosh U PPC Mac OS X Mach-O en-US rv:1.9a1) Gecko/20051121 SeaMonkey/1.5a
+Build Identifier: Mozilla/5.0 (Macintosh U PPC Mac OS X Mach-O en-US rv:1.9a1) Gecko/20051121 SeaMonkey/1.5a
+
+No ports have been specified in the Preferences pane.
+
++++++
+
+DCC receive:
+
+[18:54:19] sid^^ DCC Send Baby Seal face.jpg (12.39.92.135)
+
+/dcc-accept sid^^
+
+[18:54:22] [INFO] 0 pending incoming DCC offers matched.
+[18:54:22] [INFO] You must specify enough of the user's nickname to uniquely identify the request or include the request type and even the filename if necessary.
+
++++++
+
+/dcc-send sid^^
+
+{File browser comes up. Select a small .jpg.}
+
+[ERROR] Internal error dispatching command “dcc-send”.
+[ERROR] TypeError: setting a property that has only a getter @  2562
+
++++++
+
+/dcc-chat sid^^
+[19:02:06] [DCC] Sent DCC Chat offer to “sid^^” from YOU (67.186.207.96:55938) [Cancel].
+
+[19:05:06][DCC] Aborted DCC Chat with “sid^^” (67.186.207.96:55938).
+
++++
+
+The FAQ (http://www.hacksrus.com/~ginda/chatzilla/faq/chatzilla-faq.html Section 2.9) doesn't give any information about setting ports for DCC or troubleshooting. If you have anything you want me to check let me know. Next week I will have a chance to test through a different ISP.
+
+
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. Perform any dcc function.
+
+Actual Results:  
+Note that the function fails.
+
+Expected Results:  
+Sends receives and chats should connect.",gijskruitbosch+bugs,dafydd,fixed,1,resolved,4,0,14,5,normal,2
+DEVELOPER.MOZILLA.ORG-416840,General,DEVELOPER.MOZILLA.ORG,Fix  and  cruft,"Since we removed the breadcrumbs and title-override extensions from developer.mozilla.org many pages now actually show
+
+ 
+
+or
+
+ JS_LookupProperty
+
+The new wiki will fix this for the short term let's make the extensions emit nothing.",nobody,jorendorff,fixed,1,resolved,4,0,4,1,normal,2
+MARKETPLACE_GRAVEYARD-977729,Reviewer Tools,MARKETPLACE_GRAVEYARD,add a waffle to disable the theme queue,This is a pretty private URL so literally putting a 403 or message here is fine.  This is a quick/simple thing.,kngo,wclouser,fixed,1,resolved,4,0,2,14,normal,2
+THUNDERBIRD-339875,Build Config,THUNDERBIRD,ship ga-IE for 1.5.0.5,the ga-IE locale for Thunderbird 1.5 has owner signoff and is now ready to be released. We want to allow time to smoketest the builds before we release them so I'm filing this bug to keep track of this for the next scheduled stability update 1.5.0.5.,rhelmer,mscott,fixed,1,resolved,4,0,12,26,normal,2
+FIREFOX-420556,Theme,FIREFOX,sidebarheader on GNOME has a transparent background,"Created attachment 306847
+patch v1: fixes problem
+
+The sidebar header on GNOME has a transparent background because its -moz-appearance: toolbox rule overrides its background-color: -moz-Dialog rule which causes problems for theming engines like Personas that expect the header to have an explicit background color as it does on Mac and Windows.
+
+The -moz-appearance rule also overrides rules specifying top and bottom borders and it's unclear why there are these contradictory rules but the rules are the same as in winstripe where -moz-appearance does not override the other rules so perhaps they were simply copied from Windows to Linux verbatim.
+
+In that case the intent would have been for the header to have the specified background color -moz-Dialog which we can do by simply removing the -moz-appearance.  Nevertheless that also causes the explicit border rules to be applied and I looked at three other GNOME apps with sidebars (Totem gThumb and Evolution) and none of them give their sidebar headers borders (although Evolution gives it a different background color).
+
+Plus borders look funky with the native GTK splitter which is borderless.  So I think the header should remain borderless while fixing the background color issue which we can do by removing both the -moz-appearance rule and the top and bottom border rules.
+
+Here's a patch that does that.
+
+Note: there are other things I noticed while investigating this issue like that we use a widget (sidebarheader) with no XBL binding that we put its styles in toolkit/ instead of browser/ on Linux and Windows (it's in browser/ on Mac although there's at least one funky rule there as well) and that we pad the header label by four pixels on the left which causes it to be misaligned with text in the sidebar itself (f.e. the Search label in the Bookmarks sidebar).
+
+But I'll file those as separate bugs.
+
+Requesting wanted-firefox3 for this theme polish fix that has implications for extensibility.",myk,myk,fixed,1,resolved,4,0,6,3,normal,2
+MOZILLA_LOCALIZATIONS-415621,mk / Macedonian,MOZILLA_LOCALIZATIONS,Firefox 3 mk release tracker,"This is a tracker bug for releasing Firefox 3 mk.
+
+This bug is not that detailed but as we get particular work items they should block this bug for tracking and better discoverability.",nobody,l10n,fixed,1,resolved,4,0,2,162,normal,2
+CORE-204573,HTML: Parser,CORE,View-source highlighting is incorrect for XML an file with non-ANSI characters in tag names.,"User-Agent:       Mozilla/5.0 (Windows U Windows NT 5.0 en-US rv:1.4b) Gecko/20030502
+Build Identifier: Mozilla/5.0 (Windows U Windows NT 5.0 en-US rv:1.4b) Gecko/20030502
+
+Only the beginning of the tag is colored. Any non-ANSI letter stops the coloring
+(the rest appears in black).
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. View an XML source with non-ANSI characters in a tag name (e. g. the attached
+file).
+Actual Results:  
+In view-source the beginning of a tag containing non-ANSI characters appears in
+purple but the couloring stops at the non-ANSI letter and then the rest of the
+tag appears in black. When the first letter of the tag is a non-ANSI character
+the whole tag appears in black and isn't even in bold font.
+
+Expected Results:  
+The whole tag name should be in purple.
+
+- Also tested on Mozilla 1.3 (PC/Windows) and Mozilla 1.0 (PC/Linux)
+- In the case of an XML file which is not linked to any stylesheet the main
+browser window correctly highlights the file (not applicable to the linux 1.0
+version which does not show the structure of the file in the browser window).
+- Tested with a file saved in utf-8 utf-16 and iso-8859-1 formats (restricted
+to iso-8859-1 characters).",mrbkap,gilles.ollivier,fixed,1,resolved,4,0,13,501,normal,2
+THUNDERBIRD-412434,General,THUNDERBIRD,opening a window with -chrome does not work anymore,"Hi
+I have an extension whose main window is chrome://myext/content/myext.xul
+
+I used to open it with
+thunderbird -chrome chrome://myext/content/myext.xul
+but now it does not work anymore: I get ReferenceError: resolveURIInternal is not defined on the console and thunderbird does not launch. Actually components/nsMailDefaultHandler.js calls resolveURIInternal but that function is defined nowhere in the file: http://mxr.mozilla.org/mozilla/source/mail/components/nsMailDefaultHandler.js#232
+
+It seems this bug was introduced by fix for bug #395942.
+
+If I define resolveURIInternal (by copying it from http://mxr.mozilla.org/mozilla/source/browser/components/nsBrowserContentHandler.js#83) -chrome works fine again.",arno,arno,fixed,1,resolved,4,0,16,0,normal,2
+OTHER_APPLICATIONS_GRAVEYARD-391445,QA Companion,OTHER_APPLICATIONS_GRAVEYARD,Unsightly border around clicked tabs,With the new skin work (thanks for that Zak!) there's a somewhat ugly border around the text after you click on a tab. We should make that go away...,bhsieh,zach,fixed,1,resolved,4,0,4,6,normal,2
+FIREFOX_OS_GRAVEYARD-942470,General,FIREFOX_OS_GRAVEYARD,test_user_agent_updates.htmltest_user_agent_overrides.html intermittently fails to unset its override of the UA string | test_videocontrols_standalone.html | Height of audio element should be 28 which is equal to the controls bar. - got 123 expected 28,"See either https://tbpl.mozilla.org/php/getParsedLog.php?id=31007226&tree=Try#error0 or all of bug 923597 - test_handlerApps.xhtml is disabled on OS X 10.8 by way of navigator.userAgent.indexOf(Mac OS X 10.8) != -1 but intermittently instead of including that string in the UA and thus not running that failing test we have a UA of DummyUserAgent so we run the test and fail it.
+
+Might be a nice touch to have test_user_agent_updates.html grab the unaltered UA string at the start and test that it is back to that at the end so if this crops up again I won't have to guess that some later test is failing because we're running DummyUserAgent rather than the browser we thought we were running.",jimnchen+bmo,philringnalda,fixed,1,resolved,4,0,11,13,normal,2
+TECH_EVANGELISM_GRAVEYARD-142958,Other,TECH_EVANGELISM_GRAVEYARD,oracle.usu.ru - form is submitted incorrectly in Mozilla 1.0RC1,"Sorry this page is in Russian. I'll try to explain what happens without
+mentioning any text on the page or so.
+The bug I've found appeared in Mozilla 1.0 Release Candidate 1 only all prior
+versions works fine. 
+The aim of that page is to provide web access to our University library's
+catalogue. When you open the page you'll see the yellow square with several
+fields and buttons. There is only one text field (for entering the search
+phrase). Enter something there for example physics and press Ok button. In
+Mozilla 0.9.9 and earlier versions and Internet Explorer you'll receive a list
+of books which titles contains physics. In Mozilla 1.0 RC1 the form submits
+new page loads but it contains no books info it's just the same as the page
+what you see before submission (pay attention to the text just under the yellow
+square in English it should looks like: 'XXX mathes found. Your query was:
+'. As one can suppose after submitting a form this should be
+like: 'XXX mathes found. Your query was physics' but in 1.0RC1 we actually
+have '0 mathes found. Your query was:  ').
+My little test shows that the difference between information sent on submission
+in 0.9.9 and 1.0RC1 is that 0.9.9 sends 'ssub1=find' name-value pair when 'Ok'
+button is pressed ('Ok' button is actually an image and has an OnClick event
+document.forms[0].submit()) but 1.0RC1 does'nt. Maybe a server script
+'prim.jsp' relies on this pair and when there is no filed named 'ssub1' in a
+query it decides that there were no submission and returns blank form?",other,e_val,fixed,1,resolved,4,1,20,2480,normal,2
+SEAMONKEY-160672,UI Design,SEAMONKEY,[FIX]XP filepicker's modeGetFolder looks too much like modeOpen,The error messages could use some work as could the textfield label,bzbarsky,bzbarsky,fixed,1,resolved,4,0,12,40,normal,2
+MOZILLA.ORG_GRAVEYARD-471000,Server Operations,MOZILLA.ORG_GRAVEYARD,qm-plinux-trunk04 needs a kick.,Currently unreachable.,phong,anodelman,fixed,1,resolved,4,0,2,1,normal,2
+CORE-459938,Audio/Video,CORE,Video has incorrect colours,"The video in the URL when played using  has a gray background. The background should be white as it is in other Theora players. This is a bug in the liboggplay library we use and a ticket is open for it:
+
+http://trac.annodex.net/ticket/421",cajbir.bugzilla,cajbir.bugzilla,fixed,1,resolved,4,0,3,14,normal,2
+SEAMONKEY-57480,General,SEAMONKEY,problem with getting back to Font size 100% after using mousewheel resize,"when changing the font size using the mouse wheel then wanting back to 100%
+size you cant just use the (View-Text Size-100%) menu. It wont change the size
+of the text because it wasnt set by this menu. To get back to 100% exactly is
+working in 2 ways: Either use the mouse and scroll the size back to what you
+'THINK' is 100% or change the size per View-Menu to anything other than 100%
+then back to 100%",bryner,ultimaonline,fixed,1,resolved,4,0,10,5,normal,2
+FIREFOX_BUILD_SYSTEM-454709,General,FIREFOX_BUILD_SYSTEM,WinCE Resource Compiling Needs Shunt Application,"Created attachment 337997
+Patch to add arm-wince-res.c source to VS8 and VS9 WinCE tools
+
+In order to compile resources within the SECURITY module several pathnames have to be converted from MingW32 to Windows (i.e. /c/.... to c:/....)
+
+This means we need a resource compiler shunt tool (arm-wince-res.exe) to do the command line conversion as well as calling the correct SDK resource compiler.",wolfe,wolfe,fixed,1,resolved,4,0,7,12,normal,2
+OTHER_APPLICATIONS-315913,ChatZilla,OTHER_APPLICATIONS,Replace RDF userlist with direct nsITreeView implementation,"This is mainly a personal rant because I've only just written the patch so I haven't had time to profile it properly but I get the feeling that Chatzilla spends too much time sorting the nick list. This is particularly evident when an op pings out what tends to happen is that you get join auto-op part and nick changes in quick succession which seems to kill my CPU.
+
+The main thrust of my proposal is changing the tree from a content view to a builder view achieved by setting flags=dont-build-content on the tree. This already allows us to automatically sort when switching channel or when new nicks join a channel. The sort order is initialized once and then the tree maintains its sort although this can of course be toggled. Nick (and op changes in sort by op mode) are handled by removing and reinserting the nick.
+
+Calls to updateUserList are therefore removed in setCurrentObject my_cjoin my_cmode and my_cnick although in the latter two cases calls to _removeUserFromGraph and _addUserToGraph are used to maintain the nick list.
+
+I changed setListMode to clear the tree cache directly it appeared to be relying on some unknown side effect for its attribute change to take effect.
+
+The only other change necessary in the current code was the code that extracts the nick from a given tree row as the builder view does not permit arbitrary attributes I had to extract the unicode name from the RDF data source. However the reverse operation of obtaining the tree row from a nick is simplified to tree.builderView.getIndexOfResource(nick.getGraphResource()).
+
+I'm not sure what style is preferred so I tested for nsITreeColumn in my new sortUserList() method although I have only tested it on 1.8+ so far.",gijskruitbosch+bugs,neil,fixed,1,resolved,4,1,14,758,normal,2
+MOZILLA_LOCALIZATIONS-372935,ro / Romanian,MOZILLA_LOCALIZATIONS,[ro] migration wizard string change,"We want to change the description of the homepage in the migration wizard
+http://lxr.mozilla.org/l10n-mozilla1.8/source/ro/other-licenses/branding/firefox/brand.properties
+
+It should look like http://lxr.mozilla.org/mozilla/source/other-licenses/branding/firefox/locales/en-US/brand.properties
+
+The corresponding patch is the en-US part in https://bugzilla.mozilla.org/attachment.cgi?id=257411&action=diff#mozilla/other-licenses/branding/firefox/locales/en-US/brand.properties_sec1
+
+Current String in English for homePageSingleStartMain:
+Firefox Start a fast search page with search results by XXX
+
+New String:
+Firefox Start a fast home page with built-in search
+
+Please change this on trunk and prepare a patch for the branch.
+
+See bug 372409 and bug 371309 for more information.",iulianu,l10n,fixed,1,resolved,4,0,5,50,normal,2
+TESTING_GRAVEYARD-412183,Sisyphus,TESTING_GRAVEYARD,Sisyphus|JavaScript Testing - TinderboxPrint of test counts contain leading whitespace,"Created attachment 296837
+patch
+
+mozilla/js/tests/runtests.sh uses wc to count the number of tests failures fixes and regressions for output to Tinderbox. On mac wc -l returns leading whitespace which causes unintended line breaks on the Tinderbox page.",bob,bob,fixed,1,resolved,4,0,3,0,trivial,1
+WWW.MOZILLA.ORG-316393,General,WWW.MOZILLA.ORG,german community page needs update,"User-Agent:       Mozilla/5.0 (X11 U Linux i686 en-US rv:1.9a1) Gecko/20051114 Firefox/1.6a1
+Build Identifier: Mozilla/5.0 (X11 U Linux i686 en-US rv:1.9a1) Gecko/20051114 Firefox/1.6a1
+
+Change a the line German to German
+
+Reproducible: Always",thorsten.fritz,thorsten.fritz,fixed,1,resolved,4,0,10,210,trivial,1
+MOZILLA_LOCALIZATIONS-431511,de / German,MOZILLA_LOCALIZATIONS,German version: Access keys: Extras -> P assigned twice for Passwort-Manager and PopUp-Manager,"User-Agent:       Mozilla/5.0 (Windows U Windows NT 5.1 de-AT rv:1.8.1.13) Gecko/20080313 SeaMonkey/1.1.9
+Build Identifier: Mozilla/5.0 (Windows U Windows NT 5.1 de-AT rv:1.8.1.13) Gecko/20080313 SeaMonkey/1.1.9
+
+German version: Access key check:
+Menu Extras: hot key P is assigned twice for Passwort-Manager as well as for PopUp-Manager
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. Go to Extras
+2. P underlines for Password-Manager and for PopUp-Manager too
+Actual Results:  
+Letter P in PopUp-Manager underlined
+
+Expected Results:  
+In older releases of Mozilla letter o was underlined",kairo,sven.sabrowski,fixed,1,resolved,4,0,3,551,trivial,1
+CAMINO_GRAVEYARD-337571,Bookmarks,CAMINO_GRAVEYARD,Fix the inability to edit keywords on folders in the outline view,"We don't allow folders to have keywords so the keyword field in the Folder view of the info panel should be disabled.
+
+Right now it's not in the tab loop but you can still click there add a keyword and watch it be discarded when you leave the field :P
+
+We should disable the field entirely (and maybe make the label grey?) until such time as we actually support keywords for folders/tab groups if ever (I thought there was a bug but I can't find it).
+
+Blocking bug 325880 because this *is* just a .nib change :)",bugzilla-graveyard,alqahira,fixed,1,resolved,4,0,11,23,trivial,1
+CORE_GRAVEYARD-124332,Error Console,CORE_GRAVEYARD,JavaScript Console should use fixed width font,"The JavaScript Console uses a variable with font.  This means that features like
+the green arrow which underlines the point in a line with the JS fails is hard
+to match up.
+
+Switching to a fixed with font would make the green arrow appear under the point
+in the line with the JS fails just making the feature useful.",neil,rodd,fixed,1,resolved,4,0,7,145,trivial,1
+CAMINO_GRAVEYARD-345552,General,CAMINO_GRAVEYARD,Remove a pre-panther check,http://lxr.mozilla.org/mozilla/source/camino/src/browser/BrowserWindowController.mm#934,peter.a.jaros,froodian,fixed,1,resolved,4,0,10,33,trivial,1
+OTHER_APPLICATIONS-184228,ChatZilla,OTHER_APPLICATIONS,Spelling error in irc.js: function net_conenct().,"User-Agent:       Mozilla/5.0 (Windows U Windows NT 5.0 en-US rv:1.3a) Gecko/20021115
+Build Identifier: Mozilla/5.0 (Windows U Windows NT 5.0 en-US rv:1.3a) Gecko/20021115
+
+This doesn't seem to dramatically affect anything.The spelling error is right here:
+     CIRCNetwork.prototype.connect =
+     function net_conenct()
+     {...}
+I'd imagine that conenct should be connect .
+
+Reproducible: Always
+
+Steps to Reproduce:",rginda,justinarthur,fixed,1,resolved,4,0,10,195,trivial,1
+MAILNEWS_CORE-521428,Build Config,MAILNEWS_CORE,Port |Bug 518124 - Package content_canvas.xpt| to comm-central (apps),"SeaMonkey needs it.
+
+Note that Thunderbird patch in bug 514665 is wrong in that m-1.9.2 too still needs the old files!
+
+(Fwiw I'm not sure if calendar should be updated too or not...)",bugzillamozillaorg_serge_20140323,bugzillamozillaorg_serge_20140323,fixed,1,resolved,4,0,9,173,trivial,1
+TESTOPIA-371957,Test Runs,TESTOPIA,when clicking on the magnifying glass for notes in a test run the context of the screen resets to the top,"User-Agent:       Mozilla/5.0 (Windows U Windows NT 5.1 en-US rv:1.8.1.2) Gecko/20070219 Firefox/2.0.0.2
+Build Identifier: testopia 1.1.3
+
+When clicking on the magnifying glass for notes in a test run the context of the screen resets to the top. That is the run screen goes to the top of the page immediately when clicking on the magnifying glass. The notes page pops up at the same time. (normal) It would be a bit nicer if on the run page you stayed at the location of the test case from which you hit the magnifying glass button. 
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. Go to runs.
+2. expand a case
+3. click on magnifying glass
+Actual Results:  
+1. new notes window pops up.
+2. run page resets to the top
+
+Expected Results:  
+1. new notes window pops up.
+2. run page stays at the test case from which you cliced on the magnifying glass",gregaryh,keith.mcfall,fixed,1,resolved,4,0,2,106,trivial,1
+SEAMONKEY-217342,Tabbed Browser,SEAMONKEY,change close tab message,I just want to change the message a bit,timeless,timeless,fixed,1,resolved,4,0,4,15,trivial,1
+NSS-336982,Libraries,NSS,Useless null check of ss in ssl3_config_match_init, ,nelson,timeless,fixed,1,resolved,4,0,8,11,trivial,1
+CORE-311672,Internationalization,CORE,Remove the obsolete 2nd parameter from |nsIStringBundleService::createBundle(...)| JS callers,"Since bug 76332 was fixed nsIStringBundleService::createBundle(...)
+needs only one argument |aURLSpec|.
+> 87   nsIStringBundle createBundle(in string aURLSpec)
+
+However many scripts have the second argument in that function.
+And contributors do not stop using that wrong style for more than 4 years.
+http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&file=nsIStringBundle.idl&branch=&root=/cvsroot&subdir=mozilla/intl/strres/public&command=DIFF_FRAMESET&rev1=1.13&rev2=1.14
+
+lazy scripts list:
+http://lxr.mozilla.org/mozilla/source/browser/base/content/search.xml
+http://lxr.mozilla.org/mozilla/source/browser/components/bookmarks/content/bookmarks.js
+http://lxr.mozilla.org/mozilla/source/toolkit/content/widgets/browser.xml
+http://lxr.mozilla.org/mozilla/source/toolkit/content/widgets/dialog.xml
+http://lxr.mozilla.org/mozilla/source/toolkit/content/widgets/stringbundle.xml
+http://lxr.mozilla.org/mozilla/source/toolkit/content/widgets/wizard.xml
+http://lxr.mozilla.org/mozilla/source/toolkit/content/contentAreaUtils.js
+http://lxr.mozilla.org/mozilla/source/xpfe/communicator/resources/content/contentAreaUtils.js
+http://lxr.mozilla.org/mozilla/source/xpfe/components/bookmarks/resources/bookmarks.js
+http://lxr.mozilla.org/mozilla/source/xpfe/global/resources/content/bindings/browser.xml
+http://lxr.mozilla.org/mozilla/source/xpfe/global/resources/content/bindings/dialog.xml
+http://lxr.mozilla.org/mozilla/source/xpfe/global/resources/content/bindings/stringbundle.xml
+http://lxr.mozilla.org/mozilla/source/xpfe/global/resources/content/bindings/wizard.xml",bugzillamozillaorg_serge_20140323,torisugari,fixed,1,resolved,4,0,18,1008,trivial,1
+MAILNEWS_CORE-186977,Backend,MAILNEWS_CORE,Message folder pane shows folder size in MB but also in kb (all lowercase),"User-Agent:       Mozilla/5.0 (Windows U Windows NT 5.0 en-US rv:1.3b) Gecko/20021227
+Build Identifier: Mozilla/5.0 (Windows U Windows NT 5.0 en-US rv:1.3b) Gecko/20021227
+
+With bug 173825 a message folder size column was introduced to the folder pane.
+Depending on the size of each folder it shows kb or MB. In that other bug
+there is no obvious reason why a lowercase b is used for the unit Bytes. So
+I think this was an accidental slip and it should be changed to KB.
+
+Four reasons why I think this should be changed:
+- It looks odd (see screenshot I'll attach)
+- It is the same unit so why use different case?
+- b is often used for bits not bytes but from the source I see here it
+means bytes
+- From lxr I see Mozilla always uses KB for kilobytes (e.g. in the message
+pane where the user sees it simultaneously which is even more confusing...) so
+it should be used here also for consistency.
+
+(The uppercase K (used everywhere else) should be ok here because it stands
+for a factor 1024 (as usual): there is a distinction (that at least some make)
+between K for 1024 and (defined by the metric system) k for 1000.)
+
+Although this bug is visible at the front end I chose the back end component
+because the affected code seems to be pretty far inside mail. Feel free to
+change if I'm wrong...
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. Open mail window with some big (> 1 MB) and some small (< 1 MB) message
+folders visible
+2. Make sure the Size column is shown in the folder pane (the left one)
+
+
+Actual Results:  
+Folder size is shown in kb and MB.
+
+Expected Results:  
+Folder size should be shown in KB and MB.",mscott,durbacher,fixed,1,resolved,4,0,13,19,trivial,1
+OTHER_APPLICATIONS-246424,ChatZilla,OTHER_APPLICATIONS,tooltip obscures described prefs object,"Tested only 0.9.64 in xft/gtk2 SuSE Linux 9.1 release Mozilla/5.0 (X11 U Linux
+i586 en-US rv:1.6) Gecko/20040114
+
+To reproduce:
+1-open prefs
+2-place mouse pointer over an object
+
+Actual behavior:
+1-Tootip renders too high obscuring the bottom portion of the object it
+describes. Problem is slightly less (~5%) at 96 DPI slightly more at 120 DPI.
+
+Expected behavior:
+1-tooltip is fully below object it describes.",bugzilla-mozilla-20000923,mrmazda,fixed,1,resolved,4,0,6,96,trivial,1
+CORE-448168,General,CORE,Apply |s/entires/entries/g|, ,rsesek,bugzillamozillaorg_serge_20140323,fixed,1,resolved,4,0,16,1105,trivial,1
+FIREFOX-257317,Toolbars and Customization,FIREFOX,Fullscreen window management buttons need tooltips,"User-Agent:       Mozilla/5.0 (Windows U Windows NT 5.1 en-US rv:1.7.2) Gecko/20040825 Firefox/0.9.1+
+Build Identifier: Mozilla/5.0 (Windows U Windows NT 5.1 en-US rv:1.7.2) Gecko/20040825 Firefox/0.9.1+
+
+The buttons that appear in the top-right of the window when in fullscreen mode
+don't have any tooltips.
+
+On Windows these need the (localisable) tooltips
+* Minimize
+* Restore
+* Close
+...to be in line with IE6.
+
+Reproducible: Always
+Steps to Reproduce:
+1. Enter fullscreen mode
+2. Hover over one of the standard three buttons at the top left of the screen.",bugzilla,ross,fixed,1,resolved,4,0,13,20,trivial,1
+BUGZILLA-322412,Bugzilla-General,BUGZILLA,Typo in error message," Error: Can't connect to MySQL server on '10.251.0.100' (113)
+   Is your database installed and up and running?
+   Do you havethe correct username and password selected in localconfig?
+
+There's a space missing between have and the. See the LXR url.",timeless,cbiesinger,fixed,1,resolved,4,0,5,1,trivial,1
+FIREFOX-517708,Session Restore,FIREFOX,use gBrowser instead of getBrowser() in session restore code,"Created attachment 401649
+patch
+
+getBrowser() is deprecated and exists only for extension compatibility.",dao+bmo,dao+bmo,fixed,1,resolved,4,0,2,0,trivial,1
+MAILNEWS_CORE-336491,Address Book,MAILNEWS_CORE,Clean up abCommon.js,There is at least one simple function (GetAbViewURI) that is only called once and actually duplicates the work and just scanning through there are some other potential tidy ups/simplifications that we can do.,standard8,standard8,fixed,1,resolved,4,0,3,1,trivial,1
+CORE-348999,MathML,CORE,deadcode in nsCSSFrameConstructor::ConstructMathMLFrame isReplaced will not be true, ,dbaron,timeless,fixed,1,resolved,4,0,5,880,trivial,1

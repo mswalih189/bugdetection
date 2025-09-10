@@ -1,0 +1,80 @@
+{% extends "nav.html" %}
+{% block content %}
+{% load static %}
+
+
+
+
+
+
+
+<section class="contact section-padding">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-lg-6 col-12">
+                <h2 class="mb-4">Predict <span>Bug Detection</span></h2>
+
+                <form class="contact-form me-lg-5 pe-lg-3" role="form" method="post">
+                         {% csrf_token %}
+                    
+                    <div class="form-floating">
+                        <input type="text"  id="name" class="form-control" placeholder="Component name:{{comp}}" name="component" required>
+
+                        <label for="name">Component name:{{comp}}</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="text"  id="name" class="form-control" placeholder="Product name:{{product}}" name="product" required>
+
+                        <label for="name">Product name:{{product}}</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="text"  id="name" class="form-control" placeholder="Short Description:{{short}}" name="short" required>
+
+                        <label for="name">Short Description:{{short}}</label>
+                    </div>
+                    
+                    <div class="form-floating">
+                        <input type="text"  id="name" class="form-control" placeholder="Status Category:{{status}}" name="status" required>
+
+                        <label for="name">Status Category:{{status}}</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="text"  id="name" class="form-control" placeholder="Status Code:{{code}}" name="code" required>
+
+                        <label for="name">Status Code:{{code}}</label>
+                    </div>
+                    
+                    <div class="form-floating">
+                        <input type="text"  id="name" class="form-control" placeholder="Bug Fix Time:{{bug}}" name="bug" required>
+
+                        <label for="name">Bug Fix Time:{{bug}}</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="text"  id="name" class="form-control" placeholder="Severity Code:{{sev}}" name="severity" required>
+
+                        <label for="name">Severity Code:{{sev}}</label>
+                    </div>
+                   
+                    <div class="form-floating">
+                        <input type="text"  id="name" class="form-control" placeholder="Bug Severity Prediction:{{prediction_data}}" name="severity" required>
+
+                        <label for="name">Bug Severity Prediction:{{prediction_data}}</label>
+                    </div>
+                   
+                </form>
+            </div>
+
+
+
+{% for i in messages %}
+<script>alert("{{i}}")</script>
+{% endfor %}
+
+
+
+
+{% endblock %}

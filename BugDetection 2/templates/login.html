@@ -1,0 +1,48 @@
+{% extends "nav.html" %}
+{% block content %}
+{% load static %}
+
+
+
+
+
+
+
+<section class="contact section-padding">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-lg-6 col-12">
+                <h2 class="mb-4">Sign <span>in</span></h2>
+
+                <form class="contact-form me-lg-5 pe-lg-3" role="form" method="post">
+                         {% csrf_token %}
+                    
+                    <div class="form-floating">
+                        <input type="text"  id="name" class="form-control" placeholder="User name" name="uname" required>
+
+                        <label for="name">User name</label>
+                    </div>
+                    
+                    <div class="form-floating">
+                        <input type="password" name="psw" id="name" class="form-control" placeholder="Password"  required>
+
+                        <label for="name">Password</label>
+                    </div>
+                    
+                    <div class="col-lg-5 col-6">
+                        <button type="submit" class="form-control">Signin</button>
+                    </div>
+                </form>
+            </div>
+
+
+
+{% for i in messages %}
+<script>alert("{{i}}")</script>
+{% endfor %}
+
+
+
+
+{% endblock %}
